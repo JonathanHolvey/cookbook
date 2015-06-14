@@ -1,0 +1,82 @@
+<recipe>
+	<title>Beef stroganoff</title>
+	<description>This Russian version of beef stroganoff is rich and flavoursome, despite being super quick to make. The tomato paste and sour cream give the stew a rich, creamy taste</description>
+	<date>7 July 2014</date>
+	<author>Marsha Tsitovitch</author>
+	<source>http://www.sbs.com.au/food/recipes/beef-stroganoff-befstroganof</source>
+	<image>http://www.sbs.com.au/food/sites/sbs.com.au.food/files/styles/full/public/Beef-stroganoff.jpg?itok=35rQJ5SC</image>
+	<difficulty>easy</difficulty>
+	<serves>4</serves>
+	<cooking>0:15</cooking>
+	<preparation>0:10</preparation>
+	<genre type="region">Europe/Russia</genre>
+	<genre type="ingredient">meat/beef</genre>
+	<genre type="style">pasta</genre>
+	<ingredients>
+		<item id="1">sour cream</item>
+		<item id="2">tomato paste</item>
+		<item id="3">beef sirloin or rump</item>
+		<item id="4">small onion(s)</item>
+		<item id="10">plain flour</item>
+		<item id="5">fettuccini</item>
+		<item id="6">fresh parsley leaf/leaves</item>
+		<item id="7">black pepper</item>
+		<item id="8">salt</item>
+		<item id="9">water</item>
+		<item id="11">vegetable oil</item>
+		<item id="12">button mushrooms</item>
+	</ingredients>
+	<dish>
+		<name>beef stroganoff</name>
+		<step>Combine [sour cream|1.1], [tomato paste|2.1], [water|9.1], [salt|8.1] and [pepper|7.1]. Set aside.</step>
+		<step>Heat [oil|11.1] in a large frying pan over medium heat and cook [onion|4.1] for 3 minutes or until light golden. Lightly dust [beef|3.1] with [flour|10.1], shaking off excess, then add to pan with [mushrooms|12.1] and cook, turning occasionally, for 5 minutes or until the beef is browned.</step>
+		<step>Reduce heat to low, add sour cream mixture and cook for a further 4 minutes, stirring, until or warmed through. Add a little water if necessary. Be careful not to overheat or the sour cream will curdle.</step>
+		<step>Serve on a bed of [fettuccine|5.1], scattered with [parsley|6.1]</step>
+		<ingredient id="1.1">
+			<quantity>300</quantity>
+			<unit>g</unit>
+		</ingredient>
+		<ingredient id="2.1">
+			<quantity>1</quantity>
+			<unit>tablespoon(s)</unit>
+		</ingredient>
+		<ingredient id="3.1">
+			<quantity>500</quantity>
+			<unit>g</unit>
+			<prep>cut into 5&#160;mm strips</prep>
+		</ingredient>
+		<ingredient id="4.1">
+			<quantity>1</quantity>
+			<prep>cut into thin wedges</prep>
+		</ingredient>
+		<ingredient id="8.1">
+			<quantity>1</quantity>
+			<unit>teaspoon(s)</unit>
+		</ingredient>
+		<ingredient id="7.1">
+			<quantity>0.5</quantity>
+			<unit>teaspoon(s)</unit>
+		</ingredient>
+		<ingredient id="9.1">
+			<quantity>1</quantity>
+			<unit>tablepoon(s)</unit>
+		</ingredient>
+		<ingredient id="10.1"/>
+		<ingredient id="5.1">
+			<prep>cooked and buttered</prep>
+		</ingredient>
+		<ingredient id="6.1">
+			<prep>roughly chopped</prep>
+			<quantity>1</quantity>
+			<unit>small bunch(es)</unit>
+		</ingredient>
+		<ingredient id="11.1">
+			<quantity>60</quantity>
+			<unit>ml</unit>
+		</ingredient>
+		<ingredient id="12.1">
+			<quantity>8</quantity>
+			<prep>thinly sliced</prep>
+		</ingredient>
+	</dish>
+</recipe>

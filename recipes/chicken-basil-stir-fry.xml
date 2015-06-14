@@ -1,0 +1,104 @@
+<recipe>
+	<title>Chicken and holy basil stir-fry</title>
+	<description>Gai pad graprow: one of the most popular dishes in Thailand. The chicken can be substituted for pork, beef, squid, shrimp or seafood</description>
+	<source>http://www.sbs.com.au/food/recipes/chicken-and-holy-basil-stir-fry-gai-pad-graprow</source>
+	<image>http://www.sbs.com.au/food/sites/sbs.com.au.food/files/styles/full/public/images/site_21_rand_1247314059_Chicken-Basil-Stir-Fry-%28Gka.jpg?itok=R_eZQ-j6</image>
+	<difficulty>easy</difficulty>
+	<serves>4</serves>
+	<preparation>0:20</preparation>
+	<cooking>0:15</cooking>
+	<author>Rachada Mahamontri</author>
+	<date>14 June 2014</date>
+	<genre type="region">East Asia/Thailand</genre>
+	<genre type="ingredient">meat/chicken</genre>
+	<genre type="style">stir-fry</genre>
+	<ingredients>
+		<item id="1">garlic</item>
+		<item id="2">red chilli(es)</item>
+		<item id="3">vegetable oil</item>
+		<item id="4">chicken thigh fillet(s)</item>
+		<item id="5">oyster sauce</item>
+		<item id="6">soy sauce</item>
+		<item id="7">fish sauce</item>
+		<item id="8">white pepper</item>
+		<item id="9">small onion(s)</item>
+		<item id="10">spring onion(s)</item>
+		<item id="11">basil</item>
+		<item id="12">egg(s)</item>
+		<item id="13">chicken stock</item>
+	</ingredients>
+	<dish>
+		<name>Stir fry</name>
+		<ingredient id="1.1">
+			<quantity>10</quantity>
+			<unit>clove(s)</unit>
+			<prep>sliced</prep>
+		</ingredient>
+		<ingredient id="2.1">
+			<quantity>10</quantity>
+			<prep>sliced</prep>
+		</ingredient>
+		<ingredient id="2.2">
+			<quantity>2</quantity>
+			<prep>finely sliced</prep>
+		</ingredient>
+		<ingredient id="3.1">
+			<quantity>3</quantity>
+			<unit>tablespoon(s)</unit>
+		</ingredient>
+		<ingredient id="4.1">
+			<quantity>500</quantity>
+			<unit>g</unit>
+			<prep>finely sliced</prep>
+		</ingredient>
+		<ingredient id="5.1">
+			<quantity>1</quantity>
+			<unit>tablespoon(s)</unit>
+		</ingredient>
+		<ingredient id="6.1">
+			<quantity>1</quantity>
+			<unit>tablespoon(s)</unit>
+		</ingredient>
+		<ingredient id="7.1">
+			<quantity>1</quantity>
+			<unit>tablespoon(s)</unit>
+		</ingredient>
+		<ingredient id="8.1">
+			<quantity>1</quantity>
+			<unit>pinch(es)</unit>
+		</ingredient>
+		<ingredient id="9.1">
+			<quantity>1</quantity>
+			<prep>sliced</prep>
+		</ingredient>
+		<ingredient id="10.1">
+			<quantity>2</quantity>
+			<prep>cut into 3 cm lengths</prep>
+		</ingredient>
+		<ingredient id="13.1">
+			<quantity>3</quantity>
+			<unit>tablespoon(s)</unit>
+		</ingredient>
+		<ingredient id="11.1">
+			<quantity>0.5</quantity>
+			<unit>bunch(es)</unit>
+			<prep>leaves picked</prep>
+		</ingredient>
+		<step>Put the [garlic|1.1] and [chillies|2.1] in a mortar and pound to a rough paste.</step>
+		<step>Heat a wok until smoking hot then add the [oil|3.1] and swirl to coat the surface. Add the pounded chilli and garlic and stir-fry for 15–20 seconds. Add the [chicken|4.1] and stir-fry for 1–2 minutes, or until most of the chicken has changed colour.</step>
+		<step>Stir in the [oyster|5.1], [soy|6.1] and [fish sauces|7.1] and add the [pepper|8.1], [onion|9.1], [spring onion|10.1] and [extra chilli|2.2]. Keep stir-frying and when the chicken is just cooked, add the [chicken stock|13.1].</step>
+		<step>Turn off the heat and toss through the [basil leaves|11.1]. Transfer to a serving plate.</step>
+	</dish>
+	<dish>
+		<name>Fried eggs</name>
+		<ingredient id="3.2">
+			<quantity>125</quantity>
+			<unit>ml</unit>
+		</ingredient>
+		<ingredient id="12.1">
+			<quantity>4</quantity>
+		</ingredient>
+		<step>Wipe out the wok and add the [oil|3.2]. Crack the eggs into a bowl, then, when the oil is hot, gently pour them into the wok.</step>
+		<step>Fry the [eggs|12.1] until golden (they should stick together), then lift out with a slotted spoon and place on top of the chicken stir-fry.</step>
+	</dish>
+</recipe>

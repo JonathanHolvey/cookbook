@@ -1,0 +1,11 @@
+RewriteEngine On
+
+# rewrite recipe pages
+RewriteRule ^recipes/(.+)$ recipe.php?title=$1 [NC,L]
+
+# -- production environment only --
+Options -MultiViews
+RewriteBase /
+
+# -- development environment only --
+# RewriteBase /cookbook.rocketchilli.com/

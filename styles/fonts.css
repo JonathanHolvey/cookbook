@@ -1,0 +1,42 @@
+/*@font-face {
+	font-family: "Museo";
+	src: url("fonts/museo-300.woff") format("woff");
+	font-weight: lighter;
+	font-style: normal;
+}*/
+@font-face {
+	font-family: "Museo";
+	src: url("fonts/museo-500.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+/*@font-face {
+	font-family: "Museo";
+	src: url("fonts/museo-700.woff") format("woff");
+	font-weight: bold;
+	font-style: normal;
+}*/
+@font-face {
+	font-family: "Museo Sans";
+	src: url("fonts/museo-sans-500.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Museo Sans";
+	src: url("fonts/museo-sans-500-italic.woff") format("woff");
+	font-weight: normal;
+	font-style: italic;
+}
+@font-face {
+	font-family: "Museo Slab";
+	src: url("fonts/museo-slab-500.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Museo Slab";
+	src: url("fonts/museo-slab-500-italic.woff") format("woff");
+	font-weight: normal;
+	font-style: italic;
+} 

@@ -1,0 +1,218 @@
+.recipe-info {
+	margin-top: 2%;
+	overflow: visible;
+}
+.recipe-info .block {
+	text-transform: uppercase;
+	float: left;
+	padding: 0.4em 0 0.3em 0;
+	background: #45ADA8;
+	text-align: center;
+	width: 23.5%;
+	margin: 0 1%;
+}
+.recipe-info .block:first-child {
+	margin-left: 0;
+}
+.recipe-info .block:last-child {
+	margin-right: 0;
+}
+.recipe-info .block .title {
+	color: #9DE0AD;
+	font-size: 80%;
+}
+.recipe-info .block .value {
+	color: #EFFED8;
+	font-size: 90%;
+}
+.recipe-photo {
+	position: relative;
+}
+.recipe-photo img {
+	display: block;
+	width: 100%;
+}
+.recipe-photo .credits {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	background: #45ADA8;
+	padding: 0.189em 0.375em;
+	text-align: right;
+	font-family: "Museo", sans-serif;
+	font-size: 80%;
+}
+.recipe-photo .credits .name {
+	color: #EFFED8;
+	margin-bottom: 0.1em;
+}
+.recipe-photo .credits .link {
+	font-size: 80%;
+	color: #9DE0AD;
+}
+.recipe-photo .credits .link a {
+	color: #9DE0AD;
+}
+.page-tab {
+	width: 32%;
+}
+.recipe-instructions .info {
+	color: #45ADA8;
+}
+.recipe-instructions .info:before {
+	content: "\0000a0";
+}
+.recipe-instructions .step {
+	color: #594F4F;
+	text-transform: uppercase;
+}
+.recipe-instructions .ingredient {
+	display: inline-block;
+	background: #45ADA8;
+	color: #EFFED8;
+	padding: 0 0.25em;
+	cursor: pointer;
+	margin: 1px 0;
+	position: relative;
+	z-index: 2;
+}
+.recipe-instructions .ingredient.active {
+	background: #547980;
+}
+.recipe-instructions .ingredient.active:hover {
+	color: #EFFED8;
+}
+.recipe-instructions .ingredient:hover {
+	color: #594F4F;
+}
+.recipe-instructions .ingredient.active:after {
+	content: "";
+	background-image: url("../images/bubble-pointer.svg");
+	background-size: 2em 1em;
+	position: absolute;
+	bottom: 125%;
+	left: 50%;
+	width: 2em;
+	height: 1em;
+	margin-left: -1em;
+}
+.recipe-instructions .ingredient .bubble {
+	display: none;
+	padding: 0.313em 0.5em;
+	box-shadow: 0 0 1.25em #594F4F;
+	position: absolute;
+	bottom: 200%;
+	left: 0;
+	background: #EFFED8;
+	cursor: default;
+}
+.recipe-instructions .ingredient.active .bubble {
+	display: block;
+}
+.recipe-instructions .bubble span {
+	display: block;
+	white-space: nowrap;
+	text-align: center;
+	margin: 0;
+}
+.recipe-instructions .bubble .name {
+	font-family: "Museo Slab", sans-serif;
+	text-transform: uppercase;
+	color: #547980;
+}
+.recipe-instructions .bubble .info {
+	font-family: "Museo", sans-serif;
+}
+/* styles for fancy checklists */
+ul.check-list li {
+	margin-top: 0.5em;
+	cursor: pointer;
+	clear: both;
+	padding-left: 2em;
+	position: relative;
+}
+ul.check-list li:hover, ul.check-list li:hover .info {
+	color: #594F4F;
+}
+ul.check-list li:before {
+	content: "";
+	display: block;
+	width: 0.8em;
+	height: 0.8em;
+	background: #EFFED8;
+	border: 0.125em solid #547980;
+	position: absolute;
+	top: 0.1em;
+	left: 0;
+}
+ul.check-list li:hover:before {
+	border-color: #594F4F;
+	background: #9DE0AD;
+}
+ul.check-list li.checked, ul.check-list li.checked .info {
+	color: #45ADA8;
+	text-decoration: line-through;
+}
+ul.check-list li.checked:before {
+	content: url("../images/tick.svg");
+	width: 1.2em;
+	background: none;
+	border: 0;
+}
+.list-count {
+	padding-left: 2.2em;
+	margin-bottom: 1.2em;
+	margin-top: 0.3em;
+	position: relative;
+}
+.list-count .counter {
+	width: 1.5em;
+	height: 1.6em;
+	padding-left: 0.1em;
+	border-radius: 1.4em;
+	font-size: 150%;
+	line-height: 1.6em;
+	position: absolute;
+	top: -0.35em;
+	left: -0.4em;
+	text-align: center;
+	color: #EFFED8;
+	background: #594F4F;
+}
+
+@media all and (min-width: 40em) {
+	.recipe-info .block .title, .recipe-info .block .value {
+		font-size: 100%;
+	}
+	.recipe-photo .credits {
+		font-size: 100%;
+	}
+	.recipe-info .block {
+		padding: 1em 0 0.9em 0;
+	}
+	.recipe-info {
+		max-width: 44em;
+		margin-top: 0.88em;
+	}
+	.list-count {
+		padding-left: 2.933em;
+		margin-top: 0.4em;
+		margin-bottom: 1.6em;
+	}
+	.list-count .counter {
+		font-size: 200%;
+		left: -0.53em;
+		top: -0.2em;
+		width: 1.6em;
+		padding: 0;
+	}
+}
+
+@media all and (min-width: 50em) {
+	.recipe-info .block .title, .recipe-info .block .value {
+		font-size: 115%;
+	}
+	.recipe-photo .credits {
+		font-size: 125%;
+	}
+}

@@ -1,0 +1,93 @@
+<recipe>
+	<title>Miso-glazed fish</title>
+	<description>Grilled fish marinated in an Asian miso sauce, with a salad of sesame flavoured brown rice</description>
+	<source>http://www.taste.com.au/recipes/30923/miso+glazed+fish+with+sesame+brown+rice+salad</source>
+	<image>http://www.taste.com.au/images/recipes/agt/2012/09/30923_l.jpg</image>
+	<author>Chrissy Freer</author>
+	<cooking>0:15</cooking>
+	<preparation>0:20</preparation>
+	<difficulty>easy</difficulty>
+	<serves>4</serves>
+	<date>3 July 2014</date>
+	<genre type="region">East Asia/Japan</genre>
+	<genre type="ingredient">fish</genre>
+	<genre type="style">salad</genre>
+	<ingredients>
+		<item id="1">miso paste</item>
+		<item id="2">soy sauce</item>
+		<item id="3">orange(s)</item>
+		<item id="4">garlic</item>
+		<item id="5">honey</item>
+		<item id="6">firm white fish fillet(s)</item>
+		<item id="7">lebanese cucumber(s)</item>
+		<item id="8">firm ripe avocado(s)</item>
+		<item id="9">rice vinegar</item>
+		<item id="10">sesame oil</item>
+		<item id="11">brown rice</item>
+		<item id="12">sesame seed(s)</item>
+		<item id="13">petit pois or green beans</item>
+	</ingredients>
+	<dish>
+		<name>miso-marinated fish</name>
+		<step>Combine the [miso paste|1.1], [soy sauce|2.1], [orange juice|3.1], [garlic|4.1] and [honey|5.1] in a glass or ceramic bowl. Add the [fish|6.1] and turn to coat. Cover and place in the fridge for 30 minutes to marinate.</step>
+		<step>Preheat the oven to 200&#160;&#176;C. Drain the fish from the marinade, loosely wrap the fillets in aluminium foil and place on a baking tray. Bake for 12 minutes or until the fish is golden and flakes easily when tested with a fork.</step>
+		<ingredient id="1.1">
+			<quantity>3</quantity>
+			<unit>teaspoon(s)</unit>
+		</ingredient>
+		<ingredient id="2.1">
+			<quantity>3</quantity>
+			<unit>teaspoon(s)</unit>
+		</ingredient>
+		<ingredient id="3.1">
+			<quantity>0.5</quantity>
+			<prep>juiced</prep>
+		</ingredient>
+		<ingredient id="4.1">
+			<quantity>2</quantity>
+			<unit>clove(s)</unit>
+			<prep>crushed</prep>
+		</ingredient>
+		<ingredient id="5.1">
+			<quantity>2</quantity>
+			<unit>teaspoon(s)</unit>
+		</ingredient>
+		<ingredient id="6.1">
+			<quantity>4</quantity>
+		</ingredient>
+	</dish>
+	<dish>
+		<name>rice and salad</name>
+		<step>Meanwhile, use a vegetable peeler to peel the [cucumber|7.1] into ribbons. Place the cucumber and [avocado|8.1] in a bowl. Add the [vinegar|9.1] and [oil|10.1] and toss to combine.</step>
+		<step>Divide the [rice|11.1] among plates. Top with the avocado mixture and fish. Sprinkle with the [sesame seeds|12.1]. Serve with [steamed snow peas|13.1].</step>
+		<ingredient id="7.1">
+			<quantity>2</quantity>
+			<prep>trimmed</prep>
+		</ingredient>
+		<ingredient id="8.1">
+			<quantity>1</quantity>
+			<prep>peeled and diced</prep>
+		</ingredient>
+		<ingredient id="9.1">
+			<quantity>1</quantity>
+			<unit>tablespoon(s)</unit>
+		</ingredient>
+		<ingredient id="10.1">
+			<quantity>2</quantity>
+			<unit>teaspoon(s)</unit>
+		</ingredient>
+		<ingredient id="11.1">
+			<quantity>2</quantity>
+			<unit>cup(s)</unit>
+			<prep>steamed</prep>
+		</ingredient>
+		<ingredient id="12.1">
+			<quantity>2</quantity>
+			<unit>teaspoon(s)</unit>
+			<prep>lightly toasted</prep>
+		</ingredient>
+		<ingredient id="13.1">
+			<prep>steamed</prep>
+		</ingredient>
+	</dish>
+</recipe>
