@@ -1,0 +1,4 @@
+RewriteEngine On
+
+RewriteRule ^recipes/([^/]+) recipe.php?title=$1 [NC,L]
+RewriteRule ^(latest|genres|search|index) index.php [NC,L]
