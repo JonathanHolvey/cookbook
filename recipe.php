@@ -68,8 +68,8 @@
 		return $time;
 	}
 
-	// function for custom sorting of shopping list array
-	function shoppingListCompare($a, $b) {
+	// function for custom sorting of check list array
+	function checkListCompare($a, $b) {
 		return strcasecmp($a["name"], $b["name"]);
 	}
 ?>
@@ -77,10 +77,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 	<title><?php echo $recipe->title ?></title>
-	<base href="<?php echo goUp(2) ?>"/>
+	<base href="<?php echo findBase() ?>"/>
 	<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
 	<?php include("resources.php") ?>
-	<link rel="stylesheet" type="text/css" href="styles/recipe.css"/>
+	<link rel="stylesheet" type="text/css" href="./styles/recipe.css"/>
+	<script type="text/javascript">pageRoot = location.href.replace(/(ingredients|method|checklist)/, "").replace(/\/$/, "")</script>
 </head>
 <body>
 	<div class="header">
@@ -133,12 +134,12 @@
 	</div>
 	<div class="recipe-instructions container">
 		<div class="tab-holder">
-			<div class="page-tab active" data-page="ingredients">Ingredients</div>
+			<div class="page-tab" data-page="ingredients">Ingredients</div>
 			<div class="page-tab" data-page="method">Method</div>
-			<div class="page-tab" data-page="shopping-list">Checklist</div>
+			<div class="page-tab" data-page="checklist">Checklist</div>
 		</div>
 		<div class="page-holder">
-			<div class="page active" id="ingredients">
+			<div class="page" id="ingredients">
 				<?php
 					// print ingredients for each dish, in the order listed in the method
 					foreach ($recipe->dish as $dish) {
@@ -198,7 +199,7 @@
 					}
 				?>
 			</div>
-			<div class="page" id="shopping-list">
+			<div class="page" id="checklist">
 				<div class="list-count">
 					<div class="counter">
 						<?php echo count($recipe->xpath("ingredients/item")) ?>
@@ -207,16 +208,16 @@
 						<?php echo count($recipe->xpath("ingredients/item")) == 1? "item": "items" ?> remaining
 					</h2>
 				</div>
-				<ul class="check-list">
+				<ul class="checklist">
 				<?php
 					// print ingredients for entire recipe, with common items summed
-					$shoppingList = array();
+					$checkList = array();
 					foreach ($recipe->ingredients->item as $recipeIngredient) {
 						$ingredient = array();
 						$ingredient["name"] = (string)$recipeIngredient;
 						$ingredient["quantities"] = array();
 						$ingredient["units"] = array();
-						// extract ingredient quantities from dish ingredients and save to multidimensional array $shoppingList
+						// extract ingredient quantities from dish ingredients and save to multidimensional array $checkList
 						foreach ($recipe->dish as $dish) {
 								foreach ($dish->ingredient as $dishIngredient) {
 								if (preg_replace("/([0-9]+)\.[0-9]+/", "$1", $dishIngredient["id"]) == $recipeIngredient["id"]) {
@@ -225,13 +226,13 @@
 								}
 							}
 						}
-						$shoppingList[] = $ingredient;
+						$checkList[] = $ingredient;
 					}
 					// sort list alphabtically
-					usort($shoppingList, "shoppingListCompare");
+					usort($checkList, "checkListCompare");
 
 					// print out list items
-					foreach ($shoppingList as $item) {
+					foreach ($checkList as $item) {
 						echo "<li>";
 						// determine whether one item (eg one tomato) is required in list
 						$uniqueUnits = array_unique($item["units"]);
@@ -252,7 +253,7 @@
 								// append formated quantity string to array
 								$unitList[] = formatNumber(array_sum($quantityList)) . ($uniqueUnit !== null? "&nbsp;" . formatString($uniqueUnit, array_sum($quantityList) > 1): "");
 							}
-							// print all quantities and units for the current shopping list item
+							// print all quantities and units for the current check list item
 							if (!$onlyOne)
 								echo  " <span class=\"info\">" . implode($unitList, " + ") . "</span>";
 						}

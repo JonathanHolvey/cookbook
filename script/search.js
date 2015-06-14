@@ -50,7 +50,10 @@ $(document).ready(function() {
 		var recipeIndex = data;
 
 		// run search when typing occurs
-		$("#search-box input").keyup(function() {
+		$("#search-box input").keyup(function(e) {
+			// add search query to history on enter press
+			if (e.keyCode == 13)
+				history.pushState(null, null, pageRoot + "/search/" + $(this).val().replace(" ", "+"));
 			// show placeholder text when input empty
 			if ($(this).val().length == 0)
 				$("#search-box").removeClass("active");

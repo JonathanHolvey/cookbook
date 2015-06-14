@@ -124,17 +124,17 @@
 	font-family: "Museo", sans-serif;
 }
 /* styles for fancy checklists */
-ul.check-list li {
+ul.checklist li {
 	margin-top: 0.5em;
 	cursor: pointer;
 	clear: both;
 	padding-left: 2em;
 	position: relative;
 }
-ul.check-list li:hover, ul.check-list li:hover .info {
+ul.checklist li:hover, ul.checklist li:hover .info {
 	color: #594F4F;
 }
-ul.check-list li:before {
+ul.checklist li:before {
 	content: "";
 	display: block;
 	width: 0.8em;
@@ -145,15 +145,15 @@ ul.check-list li:before {
 	top: 0.1em;
 	left: 0;
 }
-ul.check-list li:hover:before {
+ul.checklist li:hover:before {
 	border-color: #594F4F;
-	background: #9DE0AD;
+	/*background: #9DE0AD;*/
 }
-ul.check-list li.checked, ul.check-list li.checked .info {
+ul.checklist li.checked, ul.checklist li.checked .info {
 	color: #45ADA8;
 	text-decoration: line-through;
 }
-ul.check-list li.checked:before {
+ul.checklist li.checked:before {
 	content: url("../images/tick.svg");
 	width: 1.2em;
 	background: none;

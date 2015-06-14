@@ -14,12 +14,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 	<title>Rocket Chilli Cookbook</title>
-	<base href="<?php echo goUp(1) ?>"/>
+	<base href="<?php echo findBase() ?>"/>
 	<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
 	<?php include("resources.php") ?>
 	<link rel="stylesheet" type="text/css" href="styles/index.css"/>
 	<script type="text/javascript" src="script/jquery.highlight.js"></script>
 	<script type="text/javascript" src="script/search.js"></script>
+	<script type="text/javascript">pageRoot = location.href.replace(/(latest|genres.*|index|search.*)/, "").replace(/\/$/, "")</script>
 </head>
 <body>
 	<div class="header">
@@ -35,13 +36,13 @@
 	</div>
 	<div class="container">
 		<div class="tab-holder">
-			<div class="page-tab active" data-page="latest">Latest</div>
+			<div class="page-tab" data-page="latest">Latest</div>
 			<div class="page-tab" data-page="genres">Genres</div>
 			<div class="page-tab" data-page="search">Search</div>
 			<div class="page-tab" data-page="index">A-Z</div>
 		</div>
 		<div class="page-holder">
-			<div class="page active" id="latest">
+			<div class="page" id="latest">
 				<h2>Recent additions to the cookbook</h2>
 				<?php
 					for ($i = 0; $i < 5; $i ++)

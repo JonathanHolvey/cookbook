@@ -93,7 +93,7 @@
 	</dish>
 	<dish>
 		<name>cachapas</name>
-		<step>In a food processor, puree the [corn|13.1] with [milk|14.1], [sugar|10.2], [salt|15.1], [pepper|16.1], [egg|17.1] and [cornmeal|18.1]. The pancake should be the consistency of a thick pancake batter.</step>
+		<step>In a food processor, puree the [corn|13.1] with [milk|14.1], [sugar|10.2], [salt|15.1], [pepper|16.1], [egg|17.1] and [cornmeal|18.1]. The mix should be the consistency of a thick pancake batter.</step>
 		<step>Heat a large non-stick frying panover a low heat and add some [butter|19.1]. When it is melted and is hot, add the batter, forming 10&#160;cm circles. Cook for 2 minutes on each side.</step>
 		<ingredient id="13.1">
 			<quantity>400</quantity>
