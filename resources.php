@@ -6,3 +6,4 @@
 <script type="text/javascript" src="script/jquery.mobile.touch.js"></script>
 <script type="text/javascript" src="script/common.js"></script>
 <link rel="shortcut icon" href="images/icon.ico"/>
+<meta name="theme-color" content="#547980"/>
