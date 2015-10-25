@@ -11,10 +11,11 @@ function scrollToSearch() {
 // finds whether a word or words can be found in a child xml node of a recipe
 function matchNodes(query, recipe, selector, pluralise) {
 	// check if one or multiple words are supplied
-	if (typeof query != "object") {
-		var multi = false;
+	var multi = false;
+	if (typeof query == "object")
+		multi = true;
+	else
 		query = [query];
-	}
 
 	var found = false;
 	var matches = [];
@@ -52,10 +53,10 @@ $(document).ready(function() {
 		// run search when typing occurs
 		$("#search-box input").keyup(function(event) {
 			// add search query to history on enter press
-			if (e.keyCode == 13)
+			if (event.keyCode == 13)
 				history.pushState(null, null, pageRoot + "/search/" + $(this).val().replace(" ", "+"));
 			// show placeholder text when input empty
-			if ($(this).val().length == 0)
+			if ($(this).val().length === 0)
 				$("#search-box").removeClass("active");
 
 			// extract search query from input element and split into array of words
@@ -70,23 +71,23 @@ $(document).ready(function() {
 					var found = false;
 					if (score !== false && queryWord.length >= minMatch && ignore.indexOf(queryWord) == -1) {
 						// search in recipe title
-						if (matchNodes(queryWord, recipe, "t") == true) {
+						if (matchNodes(queryWord, recipe, "t") === true) {
 							found = true;
 							score += 1.0;
 						}
 						// search in recipe description
-						if (matchNodes(queryWord, recipe, "a") == true) {
-							found = true
+						if (matchNodes(queryWord, recipe, "a") === true) {
+							found = true;
 							score += 0.3;
 						}
 						// search in genres
-						if (matchNodes(queryWord, recipe, "g") == true) {
-							found = true
+						if (matchNodes(queryWord, recipe, "g") === true) {
+							found = true;
 							score += 0.5;
 						}
 						// search in ingredients
-						if (matchNodes(queryWord, recipe, "i", true) == true) {
-							found = true
+						if (matchNodes(queryWord, recipe, "i", true) === true) {
+							found = true;
 							score += 0.4;
 						}
 						// reject recipe if word cannot be found
@@ -130,7 +131,7 @@ $(document).ready(function() {
 					// make whole result clicable
 					$(".result").click(function() {
 						location.href = $(this).find("a").attr("href");
-					})
+					});
 
 				});
 				// highlight each match in resulting html
@@ -167,7 +168,7 @@ $(document).ready(function() {
 	$("#search-box input").focus(scrollToSearch);
 
 	// re-show placeholder text if input is empty
-	if ($("#search-box input").val() != "") {
+	if ($("#search-box input").val() !== "") {
 		$("#search-box").addClass("active");
 	}
 
