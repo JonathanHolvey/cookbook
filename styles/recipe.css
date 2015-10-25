@@ -87,14 +87,16 @@
 }
 .recipe-instructions .ingredient.active:after {
 	content: "";
-	background-image: url("../images/bubble-pointer.svg");
-	background-size: 2em 1em;
 	position: absolute;
 	bottom: 125%;
 	left: 50%;
-	width: 2em;
-	height: 1em;
+	width: 0;
+	height: 0;
 	margin-left: -1em;
+	border-left: 1em solid transparent;
+	border-right: 1em solid transparent;
+	border-top: 1em solid #EFFED8;
+
 }
 .recipe-instructions .ingredient .bubble {
 	display: none;
