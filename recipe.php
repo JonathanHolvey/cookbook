@@ -81,7 +81,8 @@
 	<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
 	<?php include("resources.php") ?>
 	<link rel="stylesheet" type="text/css" href="./styles/recipe.css"/>
-	<script type="text/javascript">pageRoot = location.href.replace(/(ingredients|method|checklist)/, "").replace(/\/$/, "")</script>
+	<link rel="prefetch" content="images/tick.svg"/>
+	<script type="text/javascript">pageRoot = location.href.replace(/(ingredients|method|checklist)/, "").replace(/\/$/, "");</script>
 </head>
 <body>
 	<div class="header">
