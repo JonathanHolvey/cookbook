@@ -144,7 +144,7 @@
 .result p {
 	color: #547980;
 }
-.result *:last-child {
+.result p:last-child {
 	margin-bottom: 0;
 }
 .result .match {
