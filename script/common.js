@@ -11,7 +11,7 @@ Array.prototype.unique = function() {
 // convert strings such as tomato(es) and leaf/leaves to tomatoes and leaves
 String.prototype.pluralise = function() {
 	return this.replace(/(\w+)\((\w*s)\)|(\w+)\/(\w+s)/g, "$1$2$4");
-}
+};
 
 
 $(document).ready(function() {
@@ -72,12 +72,12 @@ $(document).ready(function() {
 			$(".list-count h2").html("item remaining");
 		else
 			$(".list-count h2").html("items remaining");
-	})
+	});
 
 	// add decoration to hr elements
 	$("hr").each(function() {		
 		$(this).append("<div class=\"decoration\"><div class=\"circle\"/><div class=\"circle\"/><div class=\"circle\"/></div>");
-	})
+	});
 
 	// make full recent boxes clickable
 	$(".recent-box").click(function() {
@@ -120,7 +120,7 @@ function showPage(pageName) {
 	// hide current page
 	$(".page,.page-tab").removeClass("active");
 	// show new page
-	if (pageName != "")
+	if (pageName !== "")
 		page = $("#" + pageName);
 	else
 		page = $(".page").first();
@@ -128,7 +128,7 @@ function showPage(pageName) {
 	// replace active tab with current
 	$(".page-tab[data-page=\"" + $(page).attr("id") + "\"]").addClass("active");
 	// focus empty input on page change (mainly for search)
-	if (page.find("input").first().val() == "")
+	if (page.find("input").first().val() === "")
 		page.find("input").first().focus();
 	$(window).scroll();
 }
