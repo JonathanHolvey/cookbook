@@ -105,11 +105,6 @@ function parseURL() {
 		pageInfo = location.href.replace(pageRoot + "/", "");
 		pageName = pageInfo.replace(/\/.*$/, "");
 		showPage(pageName);
-		if (pageName == "search") {
-			searchTerm = pageInfo == pageName ? "" : pageInfo.replace(/^.+\//, "");
-			$("#search-box input").attr("value", searchTerm.replace(/\+/g, " ")).keyup();
-			resetSearch();
-		}
 	}
 	else
 		showPage("");
