@@ -105,6 +105,11 @@ function parseURL() {
 		pageInfo = location.href.replace(pageRoot + "/", "");
 		pageName = pageInfo.replace(/\/.*$/, "");
 		showPage(pageName);
+		if (pageName == "search") {
+			searchTerm = pageInfo == pageName ? "" : pageInfo.replace(/^.+\//, "");
+			$("#search-box input").attr("value", searchTerm.replace(/\+/g, " ")).keyup();
+			resetSearch();
+		}
 	}
 	else
 		showPage("");
@@ -113,7 +118,7 @@ function parseURL() {
 // change page and add tab navigation to history
 function setPage(pageName) {
 	showPage(pageName);
-	history.pushState(null, null, pageRoot + "/" + pageName);
+	history.replaceState(null, null, pageRoot + "/" + pageName);
 }
 
 function showPage(pageName) {

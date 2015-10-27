@@ -42,6 +42,12 @@ function matchNodes(query, recipe, selector, pluralise) {
 		return found;
 }
 
+function resetSearch() {
+	// show placeholder text when input empty
+	if ($("#search-box input").val().length === 0)
+		$("#search-box").removeClass("active");
+}
+
 var ignore = ["and", "the"]; // words to exclude from search query
 var minMatch = 3; // minimum number of characters required for a match
 
@@ -53,9 +59,9 @@ $(document).ready(function() {
 		// run search when typing occurs
 		$("#search-box input").keyup(function(event) {
 			// add search query to history on enter press
-		// show placeholder text when input empty
-		if ($("#search-box input").val().length === 0)
-			$("#search-box").removeClass("active");
+			if (event.keyCode == 13)
+				history.pushState(null, null, pageRoot + "/search/" + $(this).val().replace(/ /g, "+"));
+			resetSearch();
 
 			// extract search query from input element and split into array of words
 			var query = $(this).val().replace(/[,;]/g, "").trim().toLowerCase().split(" ");
