@@ -20,7 +20,7 @@
 	<link rel="stylesheet" type="text/css" href="styles/index.css"/>
 	<script type="text/javascript" src="script/jquery.highlight.js"></script>
 	<script type="text/javascript" src="script/search.js"></script>
-	<script type="text/javascript">pageRoot = location.href.replace(/(latest|genres.*|index|search.*)/, "").replace(/\/$/, "")</script>
+	<script type="text/javascript">pageRoot = location.href.replace(/(latest|genres.*|index|search.*)/, "").replace(/\/$/, "");</script>
 </head>
 <body>
 	<div class="header">
@@ -42,27 +42,12 @@
 			<div class="page-tab" data-page="index">A-Z</div>
 		</div>
 		<div class="page-holder">
-			<div class="page" id="latest">
-				<h2>Recent additions to the cookbook</h2>
-				<?php
-					for ($i = 0; $i < 5; $i ++)
-						echo "<div class=\"recent-box\" style=\"background-image:url('" . $recipeIndex[$i]->p . "')\">
-							<a href=\"recipes/" . str_replace(".xml", "", $recipeIndex[$i]->f) . "\" class=\"title\">" . $recipeIndex[$i]->t . "</a>
-						</div>";
-				?>
-			</div>
-			<div class="page" id="genres">This isn't ready yet</div>
-			<div class="page" id="search">
-				<div id="search-box">
-					<div class="placeholder">Search for a recipe...</div>
-					<input type="text"/>
-					<div class="search-icon"></div>
-				</div>
-				<p id="search-no-match" class="error">No matching recipes</p>
-				<p id="search-hint">Search for a recipe by its name or description, ingredients, region or style.</p>
-				<div id="search-results"></div>
-			</div>
-			<div class="page" id="index">This isn't ready yet</div>
+		 <?php
+		 	include("pages/latest.php");
+		 	include("pages/genres.php");
+		 	include("pages/search.php");
+		 	include("pages/index.php");
+		 ?>
 		</div>
 	</div>
 </body>
