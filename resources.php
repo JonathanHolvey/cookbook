@@ -7,4 +7,4 @@
 <script type="text/javascript" src="script/common.js"></script>
 <link rel="shortcut icon" href="images/icon.ico"/>
 <link rel="icon" type="image/png" href="images/icon.png" sizes="162x192"/>
-<meta name="theme-color" content="#547980"/>
+<meta name="theme-color" content="#45ADA8"/>
