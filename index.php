@@ -20,7 +20,7 @@
 	<link rel="stylesheet" type="text/css" href="styles/index.css"/>
 	<script type="text/javascript" src="script/jquery.highlight.js"></script>
 	<script type="text/javascript" src="script/search.js"></script>
-	<script type="text/javascript">pageRoot = location.href.replace(/(latest|genres.*|index|search.*)/, "").replace(/\/$/, "");</script>
+	<script type="text/javascript">pageRoot = location.href.replace(/(latest|genres.*|list|search.*)/, "").replace(/\/$/, "");</script>
 </head>
 <body>
 	<div class="header">
@@ -39,14 +39,14 @@
 			<div class="page-tab" data-page="latest">Latest</div>
 			<div class="page-tab" data-page="genres">Genres</div>
 			<div class="page-tab" data-page="search">Search</div>
-			<div class="page-tab" data-page="index">A-Z</div>
+			<div class="page-tab" data-page="list">A-Z</div>
 		</div>
 		<div class="page-holder">
 		 <?php
 		 	include("pages/latest.php");
 		 	include("pages/genres.php");
 		 	include("pages/search.php");
-		 	include("pages/index.php");
+		 	include("pages/list.php");
 		 ?>
 		</div>
 	</div>
