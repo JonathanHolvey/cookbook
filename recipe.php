@@ -2,7 +2,7 @@
 	require_once("script/common.php");
 
 	$title = $_GET["title"];
-	$recipe = simplexml_load_file("recipes/" . $title . ".xml");
+	$recipe = json_decode(file_get_contents("recipes/" . $title . ".json"), true);
 
 	// convert common fractions to html entities
 	function formatNumber($number) {
@@ -76,8 +76,8 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<title><?php echo $recipe->title ?></title>
-	<base href="<?php echo findBase() ?>"/>
+	<title><?= $recipe["title"] ?></title>
+	<base href="<?= findBase() ?>"/>
 	<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
 	<?php include("resources.php") ?>
 	<link rel="stylesheet" type="text/css" href="./styles/recipe.css"/>
@@ -88,42 +88,42 @@
 		<div class="container">
 			<h1>
 				<a href="."><img class="logo" src="images/logo.svg" alt=""/></a>
-				<?php echo $recipe->title ?>
+				<?= $recipe["title"] ?>
 			</h1>
 			<hr/>
 			<h3>
-				<?php echo $recipe->description ?>
-				<span class="date"><?php echo isset($recipe->date)? date("j M Y", strtotime($recipe->date)): "" ?></span>
+				<?= $recipe["description"] ?>
+				<span class="date"><?= isset($recipe["date"])? date("j M Y", strtotime($recipe["date"])): "" ?></span>
 			</h3>
 		</div>
 	</div>
 	<div class="recipe-info container">
 		<div class="block">
 			<div class="title">Difficulty</div>
-			<div class="value"><?php echo $recipe->difficulty ?></div>
+			<div class="value"><?= $recipe["difficulty"] ?></div>
 		</div>
 		<div class="block">
 			<div class="title">Serves</div>
-			<div class="value"><?php echo intToString($recipe->serves) ?></div>
+			<div class="value"><?= intToString($recipe["serves"]) ?></div>
 		</div>
 		<div class="block">
 			<div class="title">Prep time</div>
-			<div class="value"><?php echo convertTime($recipe->preparation) ?></div>
+			<div class="value"><?= convertTime($recipe["preparation"]) ?></div>
 		</div>
 		<div class="block">
 			<div class="title">Cook time</div>
-			<div class="value"><?php echo convertTime($recipe->cooking) ?></div>
+			<div class="value"><?= convertTime($recipe["cooking"]) ?></div>
 		</div>
 	</div>
 	<div class="recipe-photo container">
-		<img src="<?php echo $recipe->image ?>" alt=""/>
+		<img src="<?= $recipe["image"] ?>" alt=""/>
 		<div class="credits">
-			<div class="name">Original recipe by <?php echo $recipe->author ?></div>
+			<div class="name">Original recipe by <?php echo $recipe["author"] ?></div>
 			<div class="link">
 				Modified from
 				<?php
 					$sources = array();
-					foreach ($recipe->source as $url) {
+					foreach ($recipe["sources"] as $url) {
 						$text = preg_replace("/https?:\/\/([\w\.]+)\/.*/", "$1", $url);
 						$sources[] = "<a href=\"" . $url . "\">" . $text . "</a>";
 					}
