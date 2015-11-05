@@ -13,6 +13,7 @@ String.prototype.pluralise = function() {
 	return this.replace(/(\w+)\((\w*s)\)|(\w+)\/(\w+s)/g, "$1$2$4");
 };
 
+pageRoot = location.href.replace(/\/?(latest|genres|search\/.*|list|ingredients|method|checklist)/, "").replace(/#.*/, "").replace(/\/$/, "");
 
 $(document).ready(function() {
 	// hide ingredient info bubbles when clicking away
@@ -44,6 +45,7 @@ $(document).ready(function() {
 
 	// load correct page tab on load or history
 	parseURL();
+	fixJumpLinks();
 	// run stretchPages() - must have an active page available with position
 	stretchPages();
 
@@ -101,8 +103,8 @@ function stretchPages() {
 
 // load correct page tab from current url
 function parseURL() {
-	if (pageRoot != location.href.replace(/\/$/, "")) {
-		pageInfo = location.href.replace(pageRoot + "/", "");
+	if (pageRoot != location.href) {
+		pageInfo = location.href.replace(pageRoot, "").replace(/^\//, "").replace(/#.*/, "");
 		pageName = pageInfo.replace(/\/.*$/, "");
 		showPage(pageName);
 		if (pageName == "search") {
@@ -115,10 +117,11 @@ function parseURL() {
 		showPage("");
 }
 
-// change page and add tab navigation to history
+// change page and add tab navigation to url
 function setPage(pageName) {
 	showPage(pageName);
 	history.replaceState(null, null, pageRoot + "/" + pageName);
+	fixJumpLinks();
 }
 
 function showPage(pageName) {
@@ -136,4 +139,12 @@ function showPage(pageName) {
 	if (page.find("input").first().val() === "")
 		page.find("input").first().focus();
 	$(window).scroll();
+}
+
+// allow in-page links to work with the <base> tag
+// note that links to sections in other pages won't work
+function fixJumpLinks() {
+	$("a[href*='#']").each(function() {
+		$(this).attr("href", $(this).attr("href").replace(/^.*(?=#)/, location.href));
+	});
 }

@@ -6,4 +6,8 @@
 		$base = substr($url, 0, strpos($url, $domain) + strlen($domain));
 		return $base . "/";
 	}
+
+	function recipeCompare($a, $b) {
+		return strcmp($a->t, $b->t);
+	}
 ?>

@@ -14,13 +14,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 	<title>Rocket Chilli Cookbook</title>
-	<base href="<?php echo findBase() ?>"/>
+	<base href="<?= findBase() ?>"/>
 	<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
 	<?php include("resources.php") ?>
 	<link rel="stylesheet" type="text/css" href="styles/index.css"/>
 	<script type="text/javascript" src="script/jquery.highlight.js"></script>
 	<script type="text/javascript" src="script/search.js"></script>
-	<script type="text/javascript">pageRoot = location.href.replace(/(latest|genres.*|list|search.*)/, "").replace(/\/$/, "");</script>
 </head>
 <body>
 	<div class="header">

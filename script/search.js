@@ -116,9 +116,9 @@ $(document).ready(function() {
 				// create html for matched recipes
 				matches.forEach(function(match) {
 					// create surrounding hyperlink
-					$("#search-results").append($("<div>").addClass("result"));
+					$("#search-results").append($("<a>").addClass("result").attr("href", "recipes/" + $(match).find("f").text().replace(".xml", "")));
 					// create title and description
-					$("#search-results .result").last().append($("<h2>").append($("<a>").text($(match).find("t").text()).attr("href", "recipes/" + $(match).find("f").text().replace(".xml", ""))));
+					$("#search-results .result").last().append($("<h2>").text($(match).find("t").text()));
 					$("#search-results .result").last().append($("<p>").text($(match).find("a").text() + "."));
 					// create matched ingredients
 					var matchedIngredient = matchNodes(query, match, "i", true);
@@ -132,11 +132,6 @@ $(document).ready(function() {
 						$("#search-results .result").last().append($("<p>").addClass("details").append($("<span>").addClass("no-highlight title").text("Genres: ")));
 						$("#search-results p").last().append(matchedGenre.join(", ").replace(/\//g, "&nbsp;&rsaquo; "));
 					}
-					// make whole result clicable
-					$(".result").click(function() {
-						location.href = $(this).find("a").attr("href");
-					});
-
 				});
 				// highlight each match in resulting html
 				query.forEach(function(queryWord) {
