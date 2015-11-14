@@ -17,10 +17,7 @@
 			?>
 				<li>
 					<?= $name ?>
-					<span class="info">
-						<?= $details["quantity"] ? "- " . $quantity : "" ?>
-						<?= $details["prep"] ?  "- " . $details["prep"] : "" ?>
-					</span>
+					<span class="info"><?= $details["quantity"] ? "- " . $quantity : "" ?><?= $details["prep"] ?  "- " . $details["prep"] : "" ?></span>
 				</li>
 			<?php endforeach ?>
 			</ul>
