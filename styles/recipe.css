@@ -59,7 +59,7 @@
 .recipe-instructions .info {
 	color: #45ADA8;
 }
-.recipe-instructions .info:before {
+.recipe-instructions .info::before {
 	content: "\0000a0";
 }
 .recipe-instructions .step {
@@ -85,7 +85,7 @@
 .recipe-instructions .ingredient:hover {
 	color: #594F4F;
 }
-.recipe-instructions .ingredient.active:after {
+.recipe-instructions .ingredient.active::after {
 	content: "";
 	position: absolute;
 	bottom: 125%;
@@ -136,7 +136,7 @@ ul.checklist li {
 ul.checklist li:hover, ul.checklist li:hover .info {
 	color: #594F4F;
 }
-ul.checklist li:before {
+ul.checklist li::before {
 	content: "";
 	display: block;
 	width: 0.8em;
@@ -147,7 +147,7 @@ ul.checklist li:before {
 	top: 0.1em;
 	left: 0;
 }
-ul.checklist li:hover:before {
+ul.checklist li:hover::before {
 	border-color: #594F4F;
 	/*background: #9DE0AD;*/
 }
@@ -155,7 +155,7 @@ ul.checklist li.checked, ul.checklist li.checked .info {
 	color: #45ADA8;
 	text-decoration: line-through;
 }
-ul.checklist li.checked:before {
+ul.checklist li.checked::before {
 	content: url("../images/tick.svg");
 	width: 1.2em;
 	background: none;
