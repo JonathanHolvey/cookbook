@@ -58,6 +58,7 @@
 	function unabbreviate($abbr) {
 		$dictionary = [
 			"tsp" => "teaspoon(s)",
+			"tbsp" => "teaspoon(s)",
 			"tbs" => "tablespoon(s)",
 			"cup" => "cup(s)"
 		];
