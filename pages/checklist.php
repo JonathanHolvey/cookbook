@@ -1,27 +1,28 @@
 <div class="page" id="checklist">
 	<div class="list-count">
 		<div class="counter">
-			<?php echo count($recipe->xpath("ingredients/item")) ?>
+			<?php echo count($recipe["ingredients"]) ?>
 		</div>
 		<h2>
-			<?php echo count($recipe->xpath("ingredients/item")) == 1? "item": "items" ?> remaining
+			<?php echo count($recipe["ingredients"]) == 1? "item": "items" ?> remaining
 		</h2>
 	</div>
 	<ul class="checklist">
 	<?php
 		// print ingredients for entire recipe, with common items summed
-		$checkList = array();
-		foreach ($recipe->ingredients->item as $recipeIngredient) {
-			$ingredient = array();
-			$ingredient["name"] = (string)$recipeIngredient;
+		$checkList = [];
+		for ($i = 0; $i < count($recipe["ingredients"]); $i ++) {
+			$ingredient =[];
+			$ingredient["name"] = $recipe["ingredients"][$i];
 			$ingredient["quantities"] = array();
 			$ingredient["units"] = array();
 			// extract ingredient quantities from dish ingredients and save to multidimensional array $checkList
-			foreach ($recipe->dish as $dish) {
-					foreach ($dish->ingredient as $dishIngredient) {
-					if (preg_replace("/([0-9]+)\.[0-9]+/", "$1", $dishIngredient["id"]) == $recipeIngredient["id"]) {
-						$ingredient["quantities"][] = isset($dishIngredient->quantity)?(float)$dishIngredient->quantity: null;
-						$ingredient["units"][] = isset($dishIngredient->unit)? (string)$dishIngredient->unit: null;
+			foreach ($recipe["dishes"] as $dish) {
+				$dishIngredients = parseDishIngredients($dish);
+				foreach ($dishIngredients as $dishIngredient) {
+					if ((int)$dishIngredient["id"] == $i + 1) {
+						$ingredient["quantities"][] = $dishIngredient["quantity"] ? (float)$dishIngredient["quantity"] : null;
+						$ingredient["units"][] = $dishIngredient["unit"] ? $dishIngredient["unit"] : null;
 					}
 				}
 			}

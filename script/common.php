@@ -31,7 +31,7 @@
 			return preg_replace("/(\w+)\((\w*s)\)|(\w+)\/(\w+s)/", "$1$3", $string);
 	}
 
-	// finds ingredient details based on an id
+	// finds ingredient details from a recipe dish
 	function parseDishIngredients($dish) {
 		$strings = [];
 		// read ingredient strings into $strings from method steps
@@ -44,15 +44,27 @@
 		foreach ($strings as $string) {
 			// extract quantity, unit and prep from dish ingredient list
 			preg_match("/\[#(\d+)\|(?:([\d.]+) ?([^|]+)?\|)?(?:([^|]+)\|)?([\w\s]+)\]/", $string, $matches);
-			$details = [];
-			$details["id"] = strlen($matches[1]) > 0 ? $matches[1] : null;
-			$details["text"] = strlen($matches[5]) > 0 ? $matches[5] : null;
-			$details["quantity"] = strlen($matches[2]) > 0 ? $matches[2] : null;
-			$details["unit"] = strlen($matches[3]) > 0 ? $matches[3] : null;
-			$details["prep"] = strlen($matches[4]) > 0 ? $matches[4] : null;
-			$ingredients[] = $details;
+			$ingredient = [];
+			$ingredient["id"] = strlen($matches[1]) > 0 ? $matches[1] : null;
+			$ingredient["text"] = strlen($matches[5]) > 0 ? $matches[5] : null;
+			$ingredient["quantity"] = strlen($matches[2]) > 0 ? $matches[2] : null;
+			$ingredient["unit"] = strlen($matches[3]) > 0 ? unabbreviate($matches[3]) : null;
+			$ingredient["prep"] = strlen($matches[4]) > 0 ? $matches[4] : null;
+			$ingredients[] = $ingredient;
 		}
 		return $ingredients;
+	}
+
+	function unabbreviate($abbr) {
+		$dictionary = [
+			"tsp" => "teaspoon(s)",
+			"tbs" => "tablespoon(s)",
+			"cup" => "cup(s)"
+		];
+		if (isset($dictionary[$abbr]))
+			return $dictionary[$abbr];
+		else
+			return $abbr;
 	}
 
 	function getIngredientName($recipe, $id) {
