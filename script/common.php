@@ -37,16 +37,16 @@
 
 		// extract quantity, unit and prep from dish ingredient list
 		$details = [];
-		$details["id"] = $matches[1];
-		$details["text"] = $matches[5];
-		$details["quantity"] = $matches[2];
-		$details["unit"] = $matches[3];
-		$details["prep"] = $matches[4];
+		$details["id"] = strlen($matches[1]) > 0 ? $matches[1] : null;
+		$details["text"] = strlen($matches[5]) > 0 ? $matches[5] : null;
+		$details["quantity"] = strlen($matches[2]) > 0 ? $matches[2] : null;
+		$details["unit"] = strlen($matches[3]) > 0 ? $matches[3] : null;
+		$details["prep"] = strlen($matches[4]) > 0 ? $matches[4] : null;
 		return $details;
 	}
 
 	function getIngredientName($recipe, $id) {
-		return $recipe["ingredients"][0];
+		return $recipe["ingredients"][$id - 1];
 	}
 
 	// converts numbers to text representation
