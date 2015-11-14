@@ -70,7 +70,9 @@ $(document).ready(function() {
 		// update list counter with number of unchecked items
 		count = $(this).siblings("li").not(".checked").length + adjust;
 		$(this).parent().parent().find(".list-count .counter").html(count);
-		if (count == 1)
+		if (count === 0)
+			$(".list-count h2").html("All done");
+		else if (count == 1)
 			$(".list-count h2").html("item remaining");
 		else
 			$(".list-count h2").html("items remaining");
