@@ -32,17 +32,27 @@
 	}
 
 	// finds ingredient details based on an id
-	function parseIngredient($string) {
-		preg_match("/\[#(\d+)\|(?:([\d.]+) ?([^|]+)?\|)?(?:([^|]+)\|)?([\w\s]+)\]/", $string, $matches);
+	function parseDishIngredients($dish) {
+		$strings = [];
+		// read ingredient strings into $strings from method steps
+		foreach ($dish["steps"] as $step) {
+			preg_match_all("/\[#\d+|.*?\]/", (string)$step, $matches); // search for "[#1|quantity|prep|name]"
+			$strings = array_merge($strings, $matches[0]); // append $strings with matches from regex
+		}
 
-		// extract quantity, unit and prep from dish ingredient list
-		$details = [];
-		$details["id"] = strlen($matches[1]) > 0 ? $matches[1] : null;
-		$details["text"] = strlen($matches[5]) > 0 ? $matches[5] : null;
-		$details["quantity"] = strlen($matches[2]) > 0 ? $matches[2] : null;
-		$details["unit"] = strlen($matches[3]) > 0 ? $matches[3] : null;
-		$details["prep"] = strlen($matches[4]) > 0 ? $matches[4] : null;
-		return $details;
+		$ingredients = [];
+		foreach ($strings as $string) {
+			// extract quantity, unit and prep from dish ingredient list
+			preg_match("/\[#(\d+)\|(?:([\d.]+) ?([^|]+)?\|)?(?:([^|]+)\|)?([\w\s]+)\]/", $string, $matches);
+			$details = [];
+			$details["id"] = strlen($matches[1]) > 0 ? $matches[1] : null;
+			$details["text"] = strlen($matches[5]) > 0 ? $matches[5] : null;
+			$details["quantity"] = strlen($matches[2]) > 0 ? $matches[2] : null;
+			$details["unit"] = strlen($matches[3]) > 0 ? $matches[3] : null;
+			$details["prep"] = strlen($matches[4]) > 0 ? $matches[4] : null;
+			$ingredients[] = $details;
+		}
+		return $ingredients;
 	}
 
 	function getIngredientName($recipe, $id) {
