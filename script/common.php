@@ -41,18 +41,22 @@
 		}
 
 		$ingredients = [];
-		foreach ($strings as $string) {
-			// extract quantity, unit and prep from dish ingredient list
-			preg_match("/\[#(\d+)\|(?:([\d.]+) ?([^|]+)?\|)?(?:([^|]+)\|)?([\w\s]+)\]/", $string, $matches);
-			$ingredient = [];
-			$ingredient["id"] = strlen($matches[1]) > 0 ? $matches[1] : null;
-			$ingredient["text"] = strlen($matches[5]) > 0 ? $matches[5] : null;
-			$ingredient["quantity"] = strlen($matches[2]) > 0 ? $matches[2] : null;
-			$ingredient["unit"] = strlen($matches[3]) > 0 ? unabbreviate($matches[3]) : null;
-			$ingredient["prep"] = strlen($matches[4]) > 0 ? $matches[4] : null;
-			$ingredients[] = $ingredient;
-		}
+		foreach ($strings as $string)
+			$ingredients[] = parseIngredientString($string);
 		return $ingredients;
+	}
+
+	function parseIngredientString($string) {
+		// extract quantity, unit and prep from dish ingredient list
+		preg_match("/\[#(\d+)\|(?:([\d.]+) ?([^|]+)?\|)?(?:([^|]+)\|)?([\w\s]+)\]/", $string, $matches);
+		$ingredient = [];
+		$ingredient["id"] = strlen($matches[1]) > 0 ? $matches[1] : null;
+		$ingredient["text"] = strlen($matches[5]) > 0 ? $matches[5] : null;
+		$ingredient["quantity"] = strlen($matches[2]) > 0 ? $matches[2] : null;
+		$ingredient["unit"] = strlen($matches[3]) > 0 ? unabbreviate($matches[3]) : null;
+		$ingredient["prep"] = strlen($matches[4]) > 0 ? $matches[4] : null;
+		$ingredient["string"] = $matches[0];
+		return $ingredient;
 	}
 
 	function unabbreviate($abbr) {
