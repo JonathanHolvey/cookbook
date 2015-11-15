@@ -13,7 +13,7 @@ String.prototype.pluralise = function() {
 	return this.replace(/(\w+)\((\w*s)\)|(\w+)\/(\w+s)/g, "$1$2$4");
 };
 
-pageRoot = location.href.replace(/\/?(latest|genres|search\/.*|list|ingredients|method|checklist)/, "").replace(/#.*/, "").replace(/\/$/, "");
+pageRoot = location.href.replace(/\/?(latest|genres|search\/?.*|list|ingredients|method|checklist)/, "").replace(/#.*/, "").replace(/\/$/, "");
 
 $(document).ready(function() {
 	// hide ingredient info bubbles when clicking away
