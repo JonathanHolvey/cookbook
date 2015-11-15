@@ -6,7 +6,7 @@
 			// print ingredient list
 			$ingredients = parseDishIngredients($dish);
 			foreach ($ingredients as $ingredient):
-				$name = ucfirst(formatString(getIngredientName($recipe, $ingredient["id"]), !(!$ingredient["unit"] and $ingredient["quantity"] <= 1)));
+				$name = ucfirst(formatIngredient(getIngredientName($recipe, $ingredient["id"]), $ingredient["quantity"], $ingredient["unit"]));
 				$quantity = formatNumber($ingredient["quantity"]) . (isset($ingredient["unit"]) ? "&nbsp;" . formatString($ingredient["unit"], $ingredient["quantity"] > 1) : "");
 			?>
 				<li>

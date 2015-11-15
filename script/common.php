@@ -23,12 +23,20 @@
 		return $number;
 	}
 
+	function formatIngredient($string, $quantity, $unit) {
+		if ($quantity > 1 or isset($unit) or !isset($quantity))
+			return formatString($string, true);
+		else
+			return formatString($string, false);
+	}
+
 	// converts strings such as tomato(es) and leaf/leaves to tomato and leaf or tomatoes and leaves
 	function formatString($string, $many) {
+		$regex = "/(\w+)\((\w*s)\)|(\w+)\/(\w+s)/";
 		if ($many)
-			return preg_replace("/(\w+)\((\w*s)\)|(\w+)\/(\w+s)/", "$1$2$4", $string);
+			return preg_replace($regex, "$1$2$4", $string);
 		else
-			return preg_replace("/(\w+)\((\w*s)\)|(\w+)\/(\w+s)/", "$1$3", $string);
+			return preg_replace($regex, "$1$3", $string);
 	}
 
 	// finds ingredient details from a recipe dish
