@@ -2,24 +2,25 @@
 	// print ingredients for entire recipe, with common items summed
 	$checkList = [];
 	for ($i = 0; $i < count($recipe["ingredients"]); $i ++) {
-		$ingredient =[];
-		$ingredient["name"] = $recipe["ingredients"][$i];
-		$ingredient["quantities"] = [];
-		$ingredient["units"] = [];
-		// extract ingredient quantities from dish ingredients and save to multidimensional array $checkList
-		foreach ($recipe["dishes"] as $dish) {
-			$dishIngredients = parseDishIngredients($dish);
-			foreach ($dishIngredients as $dishIngredient) {
-				if ((int)$dishIngredient["id"] == $i + 1) {
-					$ingredient["quantities"][] = $dishIngredient["quantity"] ? (float)$dishIngredient["quantity"] : null;
-					$ingredient["units"][] = $dishIngredient["unit"] ? $dishIngredient["unit"] : null;
+		if (isset($recipe["ingredients"][$i])) {
+			$ingredient =[];
+			$ingredient["name"] = $recipe["ingredients"][$i];
+			$ingredient["quantities"] = [];
+			$ingredient["units"] = [];
+			// extract ingredient quantities from dish ingredients and save to multidimensional array $checkList
+			foreach ($recipe["dishes"] as $dish) {
+				$dishIngredients = parseDishIngredients($dish);
+				foreach ($dishIngredients as $dishIngredient) {
+					if ((int)$dishIngredient["id"] == $i + 1) {
+						$ingredient["quantities"][] = $dishIngredient["quantity"] ? (float)$dishIngredient["quantity"] : null;
+						$ingredient["units"][] = $dishIngredient["unit"] ? $dishIngredient["unit"] : null;
+					}
 				}
 			}
+			$checkList[] = $ingredient;
 		}
-		$checkList[] = $ingredient;
 	}
 	// sort list alphabtically
-	usort($checkList, "checkListCompare");
 ?>
 <div class="page" id="checklist">
 	<div class="list-count">
