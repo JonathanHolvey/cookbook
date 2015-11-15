@@ -8,7 +8,7 @@
 	}
 
 	function recipeCompare($a, $b) {
-		return strcmp($a->t, $b->t);
+		return strcmp($a["t"], $b["t"]);
 	}
 
 	// convert common fractions to html entities
