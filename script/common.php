@@ -18,7 +18,7 @@
 			case 0.25: return "&frac14;";
 			case 0.75: return "&frac34;";
 			case 0.33: return "&#8531;";
-			case 0.66: return "&#8532;";
+			case 0.67: return "&#8532;";
 		}
 		return $number;
 	}
@@ -64,7 +64,8 @@
 			"tsp" => "teaspoon(s)",
 			"tbsp" => "tablespoon(s)",
 			"tbs" => "tablespoon(s)",
-			"cup" => "cup(s)"
+			"cup" => "cup(s)",
+			"pinch" => "pinch(es)"
 		];
 		if (isset($dictionary[$abbr]))
 			return $dictionary[$abbr];
