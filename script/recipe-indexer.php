@@ -25,7 +25,7 @@
 				$index["i"][] = $ingredient;
 			$index["g"] = [];
 			foreach ($file["genres"] as $genre)
-				$index["g"][] = $genre;
+				$index["g"] = array_merge($index["g"], $genre);
 			$recipeIndex[] = $index;
 		}
 	}
