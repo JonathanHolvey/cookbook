@@ -1,10 +1,9 @@
 <?php
 	require_once("script/common.php");
-	$recipeIndex = (array)simplexml_load_file("recipe-index.xml");
-	$recipeIndex = $recipeIndex["r"];
+	$recipeIndex = json_decode(file_get_contents("recipe-index.json"), true);
 
 	function recipeDateCompare($a, $b) {
-		return -1 * strcmp(strtotime($a->d), strtotime($b->d));
+		return -1 * strcmp(strtotime($a["d"]), strtotime($b["d"]));
 	}
 
 	usort($recipeIndex, "recipeDateCompare");
