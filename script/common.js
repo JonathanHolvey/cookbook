@@ -83,11 +83,6 @@ $(document).ready(function() {
 		$(this).append("<div class=\"decoration\"><div class=\"circle\"/><div class=\"circle\"/><div class=\"circle\"/></div>");
 	});
 
-	// make full recent boxes clickable
-	$(".recent-box").click(function() {
-		location.href = $(this).find("a").attr("href");
-	});
-
 	window.addEventListener("popstate", function(e) {
 		parseURL();
 	});
