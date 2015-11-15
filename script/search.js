@@ -26,11 +26,13 @@ function matchProperties(query, recipe, property, pluralise) {
 			// loop through matching recipe properties
 			recipeProperty = typeof(recipe[property]) == "object" ? recipe[property] : [recipe[property]];
 			recipeProperty.forEach(function(value) {
-				var string = pluralise ? value.pluralise() : value;
-				// find word in text of selected propery
-				if (string.toLowerCase().indexOf(queryWord) != -1) {
-					matches.push(string);
-					found = true;
+				if (value !== null) {
+					var string = pluralise ? value.pluralise() : value;
+					// find word in text of selected propery
+					if (string.toLowerCase().indexOf(queryWord) != -1) {
+						matches.push(string);
+						found = true;
+					}
 				}
 			});
 		}
