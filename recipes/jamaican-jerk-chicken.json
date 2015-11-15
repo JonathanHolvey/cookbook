@@ -1,0 +1,58 @@
+{
+	"title": "Jamaican Jerk Chicken",
+	"author": "Iowa Girl Eats",
+	"sources": ["http://iowagirleats.com/2012/04/17/jamaican-jerk-chicken-the-best-rice-ever/"],
+	"image": "http://cdn.iowagirleats.com/wp-content/uploads/2012/04/DSC_0639_thumb.jpg",
+	"description": "Jamaican jerk chicken with red beans and rice. Inspired by a tropical island vacation",
+	"date": "24 July 2014",
+	"serves": 4,
+	"difficulty": "easy",
+	"cooking": "0:20",
+	"preparation": "0:30",
+	"genres": {
+		"region": "Caribbean/Jamaica",
+		"ingredients": "meat/chicken"
+	},
+	"ingredients": [
+		"chicken breast(s)",
+		"allspice",
+		"dried thyme",
+		"sugar",
+		"ground sage",
+		"nutmeg",
+		"ground cinnamon",
+		"cayenne pepper",
+		"white vinegar",
+		null,
+		"extra virgin olive oil",
+		"soy sauce",
+		"orange(s)",
+		"lime(s)",
+		"spring onion(s)",
+		"large white onion(s)",
+		"garlic",
+		"coconut oil",
+		"canned dark kidney beans",
+		"water",
+		"coconut milk",
+		"long grain white rice",
+		"salt"
+	],
+	"dishes": [
+		{
+			"name": "jerk chicken",
+			"steps": [
+				"Combine the [#2|1 tbsp|allspice], [#3|1 tbsp|thyme], [#4|1 tbsp|sugar], [#5|1 tsp|sage], [#6|0.75 tsp|nutmeg] [#7|0.75 tsp|cinnamon] and [#8|0.75 tsp|cayenne pepper] into a large bowl. In a separate bowl, stir together the [#9|190 ml|vinegar], [#13|1|juiced|orange juice], [#11|65 ml|olive oil], [#12|65 ml|soy sauce], and [#14|1|juiced|lime juice].",
+				"Slowly whisk the wet ingredients into the dry ingredients until smooth. Mix in [#15|2|chopped|spring onions], [#16|1|chopped|white onions] and [#17|5 clove(s)|peeled and crushed|garlic], then add the [#1|4|chicken breasts] to the bowl, turning over to cover completely in the marinade. Cover and refrigerate for at least one hour, and up to overnight.",
+				"Grill the chicken for 4-5 minutes per side, brushing the marinade over while grilling. When no longer pink in the middle, remove to a plate, and let rest for 5 minutes. Slice and serve with your favorite BBQ or hot sauce."
+			]
+		},
+		{
+			"name": "red beans and rice",
+			"steps": [
+				"Heat [#18|1 tbsp|oil] in a large saucepan over medium heat, then add [#17|1 clove(s)|minced|garlic], [#15|1|chopped|spring onion] and [#3|0.25 tsp|thyme], and sauté for 2 minutes.",
+				"Add [#19|200 g|drained and rinsed|beans], [#20|250 ml|water] and [#21|125 ml|coconut milk] to the pan, then stir and bring to a boil. Add in [#22|1 cup|rice] and [#23|0.5 tsp|salt], then place a lid on top, turn the heat down to low, and simmer for 15-20 minutes, or until all the liquid as been absorbed, and rice is tender."
+			]
+		}
+	]
+}

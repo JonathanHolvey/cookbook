@@ -6,7 +6,7 @@
     "sources": ["http://www.sbs.com.au/food/recipes/beef-stroganoff-befstroganof"],
     "image": "http://www.sbs.com.au/food/sites/sbs.com.au.food/files/styles/full/public/Beef-stroganoff.jpg?itok=35rQJ5SC",
     "difficulty": "easy",
-    "serves": "4",
+    "serves": 4,
     "cooking": "0:15",
     "preparation": "0:10",
     "genres": {

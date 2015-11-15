@@ -1,0 +1,50 @@
+{
+	"title": "Chicken and holy basil stir-fry",
+	"description": "Gai pad graprow: one of the most popular dishes in Thailand. The chicken can be substituted for pork, beef, squid, shrimp or seafood",
+	"date": "14 June 2014",
+	"author": "Rachada Mahamontri",
+	"sources": ["http://www.sbs.com.au/food/recipes/chicken-and-holy-basil-stir-fry-gai-pad-graprow"],
+	"image": "http://www.sbs.com.au/food/sites/sbs.com.au.food/files/styles/full/public/images/site_21_rand_1247314059_Chicken-Basil-Stir-Fry-%28Gka.jpg?itok=R_eZQ-j6",
+	"difficulty": "easy",
+	"serves": 4,
+	"cooking": "0:15",
+	"preparation": "0:20",
+	"genres": {
+		"region": "East Asia/Thailand",
+		"ingredients": "meat/chicken",
+		"style": "stir-fry"
+	},
+	"ingredients": [
+		"garlic",
+		"red chilli(es)",
+		"vegetable oil",
+		"chicken thigh fillet(s)",
+		"oyster sauce",
+		"soy sauce",
+		"fish sauce",
+		"white pepper",
+		"small onion(s)",
+		"spring onion(s)",
+		"basil",
+		"egg(s)",
+		"chicken stock"
+	],
+	"dishes": [
+		{
+			"name": "stir fry",
+			"steps": [
+				"Put the [#1|10 clove(s)|sliced|garlic] and [#2|10|sliced|chillies] in a mortar and pound to a rough paste.",
+				"Heat a wok until smoking hot then add the [#3|3 tbsp|oil] and swirl to coat the surface. Add the pounded chilli and garlic and stir-fry for 15–20 seconds. Add the [#4|500 g|finely sliced|chicken] and stir-fry for 1–2 minutes, or until most of the chicken has changed colour.",
+				"Stir in the [#5|1 tbsp|oyster], [#6|1 tbsp|soy] and [#7|1 tbsp|fish sauces] and add the [#8|1 pinch|pepper], [#9|1|sliced|onion], [#10|2|cut into 3&nbsp;cm lengths|spring onion] and [#2|2|finely sliced|extra chilli]. Keep stir-frying and when the chicken is just cooked, add the [#13|3 tbsp|chicken stock].",
+				"Turn off the heat and toss through the [#11|0.5 bunch(es)|de-stalked|basil leaves]. Transfer to a serving plate."
+			]
+		},
+		{
+			"name": "fried eggs",
+			"steps": [
+				"Wipe out the wok and add the [#3|125 ml|oil]. Crack the eggs into a bowl, then, when the oil is hot, gently pour them into the wok.",
+				"Fry the [#12|4|eggs] until golden (they should stick together), then lift out with a slotted spoon and place on top of the chicken stir-fry."
+			]
+		}
+	]
+}
