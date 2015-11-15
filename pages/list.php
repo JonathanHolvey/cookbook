@@ -25,7 +25,7 @@
 		<div id="<?= urlencode($letter) ?>" class="list-letter<?= count($recipes) === 0 ? ' empty' : '' ?>">
 			<h1><?= $letter ?></h1>
 			<?php foreach ($recipes as $recipe): ?>
-				<a href="recipes/<?= str_replace('.xml', '', $recipe["f"]) ?>" class="result">
+				<a href="recipes/<?= str_replace('.json', '', $recipe["f"]) ?>" class="result">
 					<h2><?= $recipe["t"] ?></h2>
 					<p><?= $recipe["a"] ?></p>
 					<p class="details"><span class="title">Genres:</span> <?= str_replace("/", "&nbsp;&rsaquo; ", implode(", ", (array)$recipe["g"])) ?></p>
