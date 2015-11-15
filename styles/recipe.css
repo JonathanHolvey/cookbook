@@ -168,9 +168,9 @@ ul.checklist li.checked::before {
 	position: relative;
 }
 .list-count .counter {
-	width: 1.5em;
+	width: 1.6em;
 	height: 1.6em;
-	padding-left: 0.1em;
+	padding-top: 0.05em;
 	border-radius: 1.4em;
 	font-size: 150%;
 	line-height: 1.6em;
@@ -180,6 +180,7 @@ ul.checklist li.checked::before {
 	text-align: center;
 	color: #EFFED8;
 	background: #594F4F;
+	box-sizing: border-box;
 }
 
 @media all and (min-width: 40em) {
@@ -206,7 +207,7 @@ ul.checklist li.checked::before {
 		left: -0.53em;
 		top: -0.2em;
 		width: 1.6em;
-		padding: 0;
+		padding-top: 0.03em;
 	}
 }
 
