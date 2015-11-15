@@ -8,11 +8,11 @@ function scrollToSearch() {
 	$(window).scrollTop($("#search").offset().top);
 }
 
-// finds whether a word or words can be found in a child xml node of a recipe
-function matchNodes(query, recipe, selector, pluralise) {
+// finds whether a word or words can be found in a child property of a recipe
+function matchProperties(query, recipe, property, pluralise) {
 	// check if one or multiple words are supplied
 	var multi = false;
-	if (typeof query == "object")
+	if (typeof(query) == "object")
 		multi = true;
 	else
 		query = [query];
@@ -23,10 +23,11 @@ function matchNodes(query, recipe, selector, pluralise) {
 	query.forEach(function(queryWord) {
 		// check word is allowed
 		if (ignore.indexOf(queryWord) == -1 && queryWord.length >= minMatch) {
-			// loop through matching recipe nodes
-			$(recipe).find(selector).each(function() {
-				var string = pluralise? $(this).text().pluralise(): $(this).text();
-				// find word in text of selected node
+			// loop through matching recipe properties
+			recipeProperty = typeof(recipe[property]) == "object" ? recipe[property] : [recipe[property]];
+			recipeProperty.forEach(function(value) {
+				var string = pluralise ? value.pluralise() : value;
+				// find word in text of selected propery
 				if (string.toLowerCase().indexOf(queryWord) != -1) {
 					matches.push(string);
 					found = true;
@@ -53,7 +54,7 @@ var minMatch = 3; // minimum number of characters required for a match
 
 $(document).ready(function() {
 	// load recipe index using ajax
-	$.ajax({url: "recipe-index.xml"}).done(function(data) {
+	$.ajax({url: "recipe-index.json"}).done(function(data) {
 		var recipeIndex = data;
 
 		// run search when typing occurs
@@ -67,30 +68,29 @@ $(document).ready(function() {
 			var query = $(this).val().replace(/[,;]/g, "").trim().toLowerCase().split(" ");
 			var matches = [];
 			// loop through all recipes, looking for matches
-			$(recipeIndex).find("r").each(function() {
-				var recipe = this;
+			recipeIndex.forEach(function(recipe) {
 				var score = 0; // score is used to rank matching recipes
 				// search through recipes for each query word
 				query.forEach(function(queryWord) {
 					var found = false;
 					if (score !== false && queryWord.length >= minMatch && ignore.indexOf(queryWord) == -1) {
 						// search in recipe title
-						if (matchNodes(queryWord, recipe, "t") === true) {
+						if (matchProperties(queryWord, recipe, "t") === true) {
 							found = true;
 							score += 1.0;
 						}
 						// search in recipe description
-						if (matchNodes(queryWord, recipe, "a") === true) {
+						if (matchProperties(queryWord, recipe, "a") === true) {
 							found = true;
 							score += 0.3;
 						}
 						// search in genres
-						if (matchNodes(queryWord, recipe, "g") === true) {
+						if (matchProperties(queryWord, recipe, "g") === true) {
 							found = true;
 							score += 0.5;
 						}
 						// search in ingredients
-						if (matchNodes(queryWord, recipe, "i", true) === true) {
+						if (matchProperties(queryWord, recipe, "i", true) === true) {
 							found = true;
 							score += 0.4;
 						}
@@ -116,18 +116,18 @@ $(document).ready(function() {
 				// create html for matched recipes
 				matches.forEach(function(match) {
 					// create surrounding hyperlink
-					$("#search-results").append($("<a>").addClass("result").attr("href", "recipes/" + $(match).find("f").text().replace(".xml", "")));
+					$("#search-results").append($("<a>").addClass("result").attr("href", "recipes/" + match.f.replace(".json", "")));
 					// create title and description
-					$("#search-results .result").last().append($("<h2>").text($(match).find("t").text()));
-					$("#search-results .result").last().append($("<p>").text($(match).find("a").text() + "."));
+					$("#search-results .result").last().append($("<h2>").text(match.t));
+					$("#search-results .result").last().append($("<p>").text(match.a + "."));
 					// create matched ingredients
-					var matchedIngredient = matchNodes(query, match, "i", true);
+					var matchedIngredient = matchProperties(query, match, "i", true);
 					if (matchedIngredient !== false) {
 						$("#search-results .result").last().append($("<p>").addClass("details").append($("<span>").addClass("no-highlight title").text("Ingredients: ")));
 						$("#search-results p").last().append(matchedIngredient.sort().join(", ") + "&ensp;");
 					}
 					// create matched genres
-					var matchedGenre = matchNodes(query, match, "g");
+					var matchedGenre = matchProperties(query, match, "g");
 					if (matchedGenre !== false) {
 						$("#search-results .result").last().append($("<p>").addClass("details").append($("<span>").addClass("no-highlight title").text("Genres: ")));
 						$("#search-results p").last().append(matchedGenre.join(", ").replace(/\//g, "&nbsp;&rsaquo; "));
