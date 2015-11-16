@@ -44,7 +44,7 @@
 		$strings = [];
 		// read ingredient strings into $strings from method steps
 		foreach ($dish["steps"] as $step) {
-			preg_match_all("/\[#\d+|.*?\]/", (string)$step, $matches); // search for "[#1|quantity|prep|name]"
+			preg_match_all("/\[#\d+\|.*?\]/", (string)$step, $matches); // search for "[#1|quantity|prep|name]"
 			$strings = array_merge($strings, $matches[0]); // append $strings with matches from regex
 		}
 
