@@ -1,0 +1,48 @@
+{
+	"title": "Miso-glazed fish",
+	"description": "Grilled fish marinated in an Asian miso sauce, with a salad of sesame flavoured brown rice",
+	"sources": ["http://www.taste.com.au/recipes/30923/miso+glazed+fish+with+sesame+brown+rice+salad"],
+	"image": "http://www.taste.com.au/images/recipes/agt/2012/09/30923_l.jpg",
+	"author": "Chrissy Freer",
+	"cooking": "0:15",
+	"preparation": "0:20",
+	"difficulty": "easy",
+	"serves": 4,
+	"date": "3 July 2014",
+	"genres": {
+		"regions": ["East Asia/Japan"],
+		"ingredients": ["fish"],
+		"styles": ["salad"]
+	},
+	"ingredients": [
+		"miso paste",
+		"soy sauce",
+		"orange(s)",
+		"garlic",
+		"honey",
+		"firm white fish fillet(s)",
+		"lebanese cucumber(s)",
+		"firm ripe avocado(s)",
+		"rice vinegar",
+		"sesame oil",
+		"brown rice",
+		"sesame seed(s)",
+		"petit pois or green bean(s)"		
+	],
+	"dishes": [
+		{
+			"name": "miso-marinated fish",
+			"steps": [
+				"Combine the [#1|3 tsp|miso paste], [#2|3 tsp|soy sauce], [#3|0.5|juiced|orange juice], [#4|2 clove(s)|garlic] and [#5|2 tsp|honey] in a glass or ceramic bowl. Add the [#6|fish] and turn to coat. Cover and place in the fridge for 30 minutes to marinate.",
+				"Preheat the oven to 200&nbsp;&deg;C. Drain the fish from the marinade, loosely wrap the fillets in aluminium foil and place on a baking tray. Bake for 12 minutes or until the fish is golden and flakes easily when tested with a fork."
+			]
+		},
+		{
+			"name": "rice and salad",
+			"steps": [
+				"Meanwhile, use a vegetable peeler to peel the [#7|2|trimmed|cucumber] into ribbons. Place the cucumber and [#8|1|peeled and diced|avocado] in a bowl. Add the [#9|1 tbsp|vinegar] and [#10|2 tsp|oil] and toss to combine.",
+				"Divide the [#11|2 cup|rice] among plates. Top with the avocado mixture and fish. Sprinkle with the [#12|2 tsp|sesame seeds]. Serve with steamed [#13|steamed|peas or beans]"
+			]
+		}
+	]
+}

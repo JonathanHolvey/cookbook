@@ -10,9 +10,9 @@
     "cooking": "0:15",
     "preparation": "0:10",
     "genres": {
-        "region": "Europe/Russia",
-        "ingredients": "meat/beef",
-        "style": "pasta"
+        "regions": ["Europe/Russia"],
+        "ingredients": ["meat/beef"],
+        "styles": ["pasta"]
     },
     "ingredients": [
         "sour cream",

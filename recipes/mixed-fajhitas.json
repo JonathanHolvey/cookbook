@@ -1,0 +1,70 @@
+{
+	"sources": ["http://www.taste.com.au/recipes/18044/mixed+fajitas?ref=collections,mexican-recipes"],
+	"title": "Mixed fajhitas",
+	"description": "Beef and chicken served with avocado salad and spicy salsa; these fajitas are great for both meat lovers and vegetarians. Just place all the fillings on the table and let your guests mix and match",
+	"image": "http://www.taste.com.au/images/recipes/agt/2007/10/18044_l.jpg",
+	"author": "Tracy Rutherford",
+	"difficulty": "easy",
+	"serves": 6,
+	"cooking": "0:30",
+	"date": "19 July 2014",
+	"preparation": "0:20",
+	"genres": {
+		"ingredients": ["meat/beef", "meat/chicken"],
+		"regions": ["North America/Mexico"]
+	},
+	"ingredients": [
+		"chicken breast fillet(s)",
+		"beef blade steak",
+		"vegetable oil",
+		"lime(s)",
+		"ground cumin",
+		"dried oregano",
+		"orange sweet potato(es)",
+		"red capsicum pepper(s)",
+		"red onion(s)",
+		"olive oil",
+		"green capsicum pepper(s)",
+		"soft flour or corn tortilla(s)",
+		"pickled jalapeno chilli(es)",
+		"garlic",
+		"canned red kidney beans",
+		"sour cream",
+		"large, ripe avacado(s)",
+		"canned sweetcorn",
+		"shallot(s)",
+		"fresh coriander leaf/leaves",
+		"lemon(s)",
+		"cherry or grape tomato(es)",
+		"small fresh red chilli(es)",
+		"caster sugar",
+		"salt"
+	],
+	"dishes": [
+		{
+			"name": "fajhitas",
+			"steps": [
+				"Place the [#1|600 g|thinly sliced|chicken] and [#2|750 g|trimmed of excess fat|beef] in separate shallow glass or ceramic dishes. Combine the [#3|2 tbsp|vegetable oil], [#4|2|juiced|lime juice], [#14|2 clove(s)|garlic], [#5|1.5 tsp|cumin] and [#6|1 tsp|oregano] in a jug. Pour over the chicken and beef and turn to coat. Cover and place in fridge for 3 hours to marinate.",
+				"Preheat oven to 200&nbsp;&deg;C. Line a baking tray with non-stick baking paper. Place [#7|600 g|peeled and cut into 1.5&nbsp;cm pieces|sweet potato], [#8|1|deseeded and cut into 1.5&nbsp;cm pieces|red capsicum] and [#9|1|coarsly chopped|onion] in a single layer on the lined tray. Coat with [#10|1 tbsp|olive oil] and bake for 30 minutes. Transfer to a bowl, add the [#15|400 g|drained and rinsed|beans] and combine.",
+				"Meanwhile, remove the chicken and beef from the fridge. Set aside at room temperature for 15 minutes. Preheat a barbecue flat plate on medium-high and a barbecue grill on high.",
+				"Drain the beef and chicken, and discard the marinade. Add to the grill. Cook the beef for 2-3 minutes each side for medium, or until cooked to your liking. Cook the chicken for 4-5 minutes each side or until cooked through. Transfer to separate plates, cover with foil and lay aside for 5 minutes to rest. Thinly slice beef across the grain.",
+				"Combine [#10|1 tbsp|olive oil], [#11|1|deseeded and cut into thin strips|green capsicum], [#8|1|deseeded and cut into thin strips|extra red capsicum] and [#9|1|halved and sliced lengthways|extra onion] in a large bowl. Add to the barbecue flat plate and cook, turning occasionally, for 3-5 minutes or until tender.",
+				"Warm the [#12|18|tortillas] following packet directions. Place the sweet potato mixture, green capsicum mixture, chicken and beef on separate platters. Serve with the tortillas, spicy roast tomato salsa, avocado and corn salad and, if desired, [#16|250 g|sour cream] and [#13|drained|chillies]."
+			]
+		},
+		{
+			"name": "avocado and corn",
+			"steps": [
+				"Combine the [#17|2|peeled and finely chopped|avocado], [#18|400 g|drained|corn], [#19|3|thinly sliced|shallots], [#20|0.5 bunch(es)|chopped|coriander] and [#21|0.5|juiced|lemon juice] in a medium bowl."
+			]
+		},
+		{
+			"name": "spicy roast tomato salsa",
+			"steps": [
+				"Meanwhile, line a large baking tray with non-stick baking paper. Place the [#22|500 g|halved|tomato], cut-side up, in a single layer on the lined tray.",
+				"Bake in oven for 30 minutes or until soft and lightly browned. Set aside for 30 minutes to cool.",
+				"Combine the tomato, [#9|1|finely chopped|onion], [#23|1|chopped|chilli] and [#24|1 pinch|sugar] in a medium bowl. Taste and season with [#25|salt] and serve."			
+			]
+		}
+	]
+}

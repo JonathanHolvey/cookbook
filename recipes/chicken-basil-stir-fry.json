@@ -10,9 +10,9 @@
 	"cooking": "0:15",
 	"preparation": "0:20",
 	"genres": {
-		"region": "East Asia/Thailand",
-		"ingredients": "meat/chicken",
-		"style": "stir-fry"
+		"regions": ["East Asia/Thailand"],
+		"ingredients": ["meat/chicken"],
+		"styles": ["stir-fry"]
 	},
 	"ingredients": [
 		"garlic",

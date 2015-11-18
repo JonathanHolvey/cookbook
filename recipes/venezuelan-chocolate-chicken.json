@@ -1,0 +1,55 @@
+{
+	"title": "Venezuelan chocolate chicken",
+	"description": "This traditional South American chicken dish incorporates chocolate to give it a unique and authentic flavour. Served with crispy fried corn cachapas",
+	"sources": ["http://www.mnn.com/food/recipes/photos/5-spicy-chocolate-dishes/venezuelan-chocolate-chicken", "http://www.food.com/recipe/jimmys-cachapas-203128"],
+	"image": "http://www.mnn.com/sites/default/files/styles/featured_blog/public/venezuelan_chicken.jpg",
+	"author": "Paul Young",
+	"cooking": "0:30",
+	"preparation": "0:30",
+	"difficulty": "easy",
+	"serves": 4,
+	"date": "18 June 2014",
+	"genres": {
+		"regions": ["South America/Venezuela"],
+		"ingredients": ["meat/chicken"],
+		"styles": ["casserole"]
+	},
+	"ingredients": [
+		"vegetable oil",
+		"garlic",
+		"shallot(s)",
+		"chicken thigh(s) or thigh fillet(s)",
+		"valencia orange(s)",
+		"jalapeno chilli(es)",
+		"dried ancho chilli(es)",
+		"coriander seed(s)",
+		"diced canned tomato(s)",
+		"brown sugar",
+		"70% cacao darck chocolate",
+		"fresh coriander leaf/leaves",
+		"canned sweetcorn",
+		"milk",
+		"salt",
+		"black pepper",
+		"egg(s)",
+		"finely ground cornmeal",
+		"butter"
+	],
+	"dishes": [
+		{
+			"name": "chocolate chicken",
+			"steps": [
+				"Preheat oven to 200&nbsp;&deg;C. Heat [#1|2 tbsp|oil] on a heavy-bottomed frying pan over a medium-high heat. Add the [#2|2 clove(s)|minced|garlic] and [#3|2|finely chopped|shalots] and fry until tender.",
+				"Brown the [#4|500 g|chicken] on each side, for about 10 minutes, then add [#5|3|juiced and zested|orange juice and zest], [#6|3|chopped and seeded|fresh] and [#7|2|shreded and seeded|dried chillies], [#8|1 tbsp|coriander seeds] [#9|400 g|tomatoes] and [#10|1 tbsp|sugar]. Cover and simmer for 20 minutes, then cook in the oven for a further 20 minutes.",
+				"Remove the pan from the oven and set the chicken aside. Add the [#11|85 g|chopped into pieces|chocolate pieces] to the pan and stir until blended, at which point you will have a dark, gravy-like sauce. Return the chicken to the pan, ready for serving with the cachapas and [#12|4 sprig(s)|roughly chopped|coriander]."
+			]
+		},
+		{
+			"name": "cachapas",
+			"steps": [
+				"In a food processor, puree the [#13|400 g|corn] with [#14|0.25 cup|milk], [#10|2 tbsp|sugar], [#15|0.5 tsp|salt], [#16|0.25 tsp|pepper], [#17|1|egg] and [#18|0.75 cup|cornmeal]. The mix should be the consistency of a thick pancake batter.",
+				"Heat a large non-stick frying panover a low heat and add some [#19|4 tbsp|butter]. When it is melted and is hot, add the batter, forming 10&nbsp;cm circles. Cook for 2 minutes on each side."
+			]
+		}
+	]
+}

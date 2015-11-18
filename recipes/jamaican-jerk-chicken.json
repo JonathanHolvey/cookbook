@@ -10,8 +10,8 @@
 	"cooking": "0:20",
 	"preparation": "0:30",
 	"genres": {
-		"region": "Caribbean/Jamaica",
-		"ingredients": "meat/chicken"
+		"regions": ["Caribbean/Jamaica"],
+		"ingredients": ["meat/chicken"]
 	},
 	"ingredients": [
 		"chicken breast(s)",
