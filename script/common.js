@@ -14,6 +14,7 @@ String.prototype.pluralise = function() {
 };
 
 pageRoot = location.href.replace(/\/?(latest|genres|search\/?.*|list|ingredients|method|checklist)/, "").replace(/#.*/, "").replace(/\/$/, "");
+touchDevice = !!("ontouchstart" in window || navigator.msMaxTouchPoints);
 
 $(document).ready(function() {
 	// hide ingredient info bubbles when clicking away
@@ -50,12 +51,14 @@ $(document).ready(function() {
 	stretchPages();
 
 	// change page on swipe left and right
-	$(".page-holder").on("swipeleft", function(event) {
-		$(".page-tab.active").next().click();
-	});
-	$(".page-holder").on("swiperight", function(event) {
-		$(".page-tab.active").prev().click();
-	});
+	if (touchDevice) {
+		$(".page-holder").on("swipeleft", function(event) {
+			$(".page-tab.active").next().click();
+		});
+		$(".page-holder").on("swiperight", function(event) {
+			$(".page-tab.active").prev().click();
+		});
+	}
 
 	// check and uncheck boxes in ul.checklist elements and update list counter
 	$("ul.checklist li").click(function() {
