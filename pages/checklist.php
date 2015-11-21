@@ -21,6 +21,7 @@
 		}
 	}
 	// sort list alphabtically
+	usort($checkList, "checkListCompare");
 ?>
 <div class="page" id="checklist">
 	<div class="list-count">
