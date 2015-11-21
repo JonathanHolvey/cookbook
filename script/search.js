@@ -62,8 +62,11 @@ $(document).ready(function() {
 		// run search when typing occurs
 		$("#search-box input").keyup(function(event) {
 			// add search query to history on enter press
-			if (event.keyCode == 13)
+			if (event.keyCode == 13) {
 				history.pushState(null, null, pageRoot + "/search/" + $(this).val().replace(/ /g, "+"));
+				if (touchDevice)
+					$(this).blur();
+			}
 			resetSearch();
 
 			// extract search query from input element and split into array of words
