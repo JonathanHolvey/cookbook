@@ -56,7 +56,7 @@ var minMatch = 3; // minimum number of characters required for a match
 
 $(document).ready(function() {
 	// load recipe index using ajax
-	$.ajax({url: "recipe-index.json"}).done(function(data) {
+	$.ajax({url: "recipe-index.json", dataType: "json"}).done(function(data) {
 		var recipeIndex = data;
 
 		// run search when typing occurs
