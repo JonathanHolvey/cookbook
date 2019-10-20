@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  web:
+    build:
+      context: .
+    container_name: cookbook-web
+    network_mode: bridge
+    environment:
+      VIRTUAL_HOST: local.cookbook.rocketchilli.com
+    volumes:
+      - ./:/var/www/html

@@ -1,3 +1,5 @@
+php_value date.timezone "Australia/Brisbane"
+
 RewriteEngine On
 
 # rewrite recipe pages
