@@ -1,5 +1,5 @@
 <?php
-	/* key for abbreviated node names
+	/* key for abbreviated object names
 	t = title
 	a = description (about)
 	d = date
@@ -9,23 +9,27 @@
 	g = genre
 	r = recipe */
 
-	$recipeIndex = new simpleXMLElement("<index/>");
+	$recipeIndex = [];
 
 	foreach(scandir("../recipes") as $fileName) {
-		if (preg_match("/(.+)\.xml$/", $fileName, $matches) == 1 and $fileName != "recipe-index.xml") {
-			$file = simplexml_load_file("../recipes/" . $fileName);
-			$index = $recipeIndex->addChild("r");
-			$index->addChild("t", $file->title);
-			$index->addChild("d", $file->date);
-			$index->addChild("a", $file->description);
-			$index->addChild("p", $file->image);
-			$index->addChild("f", $fileName);
-			foreach ($file->ingredients->children() as $ingredient)
-				$index->addChild("i", $ingredient);
-			foreach ($file->genre as $genre)
-				$index->addChild("g", $genre);
+		if (preg_match("/(.+)\.json$/", $fileName, $matches) == 1) {
+			$file = json_decode(file_get_contents("../recipes/" . $fileName), true);
+			$index = [];
+			$index["t"] = $file["title"];
+			$index["d"] = $file["date"];
+			$index["a"] = $file["description"];
+			$index["p"] = $file["image"];
+			$index["f"] = $fileName;
+			$index["i"] = [];
+			foreach ($file["ingredients"] as $ingredient)
+				$index["i"][] = $ingredient;
+			$index["g"] = [];
+			foreach ($file["genres"] as $genre)
+				$index["g"] = array_merge($index["g"], $genre);
+			$recipeIndex[] = $index;
 		}
 	}
 
-	$recipeIndex->asXML("../recipe-index.xml");
+	$output = json_encode($recipeIndex);
+	file_put_contents("../recipe-index.json", $output);
 ?>

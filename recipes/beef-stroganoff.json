@@ -1,0 +1,42 @@
+{
+    "title": "Beef stroganoff",
+    "description": "This Russian version of beef stroganoff is rich and flavoursome, despite being super quick to make. The tomato paste and sour cream give the stew a rich, creamy taste",
+    "date": "7 July 2014",
+    "author": "Marsha Tsitovitch",
+    "sources": ["http://www.sbs.com.au/food/recipes/beef-stroganoff-befstroganof"],
+    "image": "http://www.sbs.com.au/food/sites/sbs.com.au.food/files/styles/full/public/Beef-stroganoff.jpg?itok=35rQJ5SC",
+    "difficulty": "easy",
+    "serves": 4,
+    "cooking": "0:15",
+    "preparation": "0:10",
+    "genres": {
+        "regions": ["Europe/Russia"],
+        "ingredients": ["meat/beef"],
+        "styles": ["pasta"]
+    },
+    "ingredients": [
+        "sour cream",
+        "tomato paste",
+        "beef sirloin or rump",
+        "small onion(s)",
+        "fettuccini",
+        "fresh parsley leaf/leaves",
+        "black pepper",
+        "salt",
+        "water",
+        "plain flour",
+        "vegetable oil",
+        "button mushrooms"
+    ],
+    "dishes": [
+        {
+            "name": "beef stroganoff",
+            "steps": [
+                "Combine [#1|300 g|sour cream], [#2|1 tbsp|tomato paste], [#9|1 tbsp|water], [#8|1 tsp|salt] and [#7|0.5 tsp|pepper]. Set aside.",
+                "Heat [#11|60 ml|oil] in a large frying pan over medium heat and cook [#4|1|cut into thin wedges|onion] for 3 minutes or until light golden. Lightly dust [#3|500 g|cut into 5&#160;mm strips|beef] with [#10|flour], shaking off excess, then add to pan with [#12|8|thinly sliced|mushrooms] and cook, turning occasionally, for 5 minutes or until the beef is browned.",
+                "Reduce heat to low, add sour cream mixture and cook for a further 4 minutes, stirring, until or warmed through. Add a little water if necessary. Be careful not to overheat or the sour cream will curdle.",
+                "Serve on a bed of [#5|cooked and buttered|fettuccine], scattered with [#6|1 small bunch(es)|roughly chopped|parsley]"
+            ]
+        }
+    ]
+}

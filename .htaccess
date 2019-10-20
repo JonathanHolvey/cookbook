@@ -1,11 +1,5 @@
 RewriteEngine On
 
 # rewrite recipe pages
-RewriteRule ^recipes/(.+)$ recipe.php?title=$1 [NC,L]
-
-# -- production environment only --
-Options -MultiViews
-RewriteBase /
-
-# -- development environment only --
-# RewriteBase /cookbook.rocketchilli.com/
+RewriteRule ^recipes/([^/]+) recipe.php?title=$1 [NC,L]
+RewriteRule ^(latest|genres|search|list) index.php [NC,L]

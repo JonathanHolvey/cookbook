@@ -1,0 +1,46 @@
+{
+	"image": "http://www.taste.com.au/images/recipes/del/2010/05/24822_l.jpg",
+	"sources": ["http://www.taste.com.au/recipes/24822/spaghetti+marinara?ref=collections,italian-recipes"],
+	"author": "Valli Little",
+	"date": "26 June 2014",
+	"title": "Spaghetti marinara",
+	"description": "Take a shortcut with a good marinara mix, or choose your own favourite seafood",
+	"preparation": "0:10",
+	"cooking": "0:26",
+	"serves": "4",
+	"difficulty": "easy",
+	"genres": {
+		"regions": ["Europe/Italy"],
+		"ingredients": ["fish/seafood"],
+		"styles": ["pasta"]
+	},
+	"ingredients": [
+		"olive oil",
+		"garlic",
+		"anchovy fillet(s)",
+		"canned chopped tomato(es)",
+		"dry white wine",
+		"spaghetti or linguini",
+		"good quality marinara mix",
+		"peeled green prawns",
+		"flat leaf parsley leaf/leaves",
+		"salt",
+		"black pepper"
+	],
+	"dishes": [
+		{
+			"name": "marinara sauce",
+			"steps": [
+				"Heat [#1|2 tbsp|oil] in a large frying pan over medium-low heat and add [#2|4 clove(s)|finely chopped|garlic] and [#3|6|anchovies]. Cook, stirring, for 1-2 minutes until anchovies have melted. Add [#4|800 g|tomatoes] and [#5|200 ml|wine] and bring to a simmer, then reduce the heat to low and cook for 20 minutes until slightly reduced.",
+				"Add the [#8|200 g|prawns] and remaining [#7|800 g|seafood] and cook for a further 2-3 minutes until the marinara mix and prawns are cooked through. Season to taste with [#10|salt] and [#11|black pepper]."
+			]
+		},
+		{
+			"name": "pasta",
+			"steps": [
+				"Meanwhile, cook the [#6|500 g|pasta] in a large pan of boiling salted water according to packet instructions. Drain, then return to the pan and toss in a little [#1|0.5 tbsp|olive oil].",
+				"Add the marinara sauce to the drained pasta and toss to combine, then divide among bowls and serve garnished with [#9|torn|parsley leaves]."
+			]
+		}
+	]
+}

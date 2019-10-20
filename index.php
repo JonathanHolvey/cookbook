@@ -1,10 +1,9 @@
 <?php
 	require_once("script/common.php");
-	$recipeIndex = (array)simplexml_load_file("recipe-index.xml");
-	$recipeIndex = $recipeIndex["r"];
+	$recipeIndex = json_decode(file_get_contents("recipe-index.json"), true);
 
 	function recipeDateCompare($a, $b) {
-		return -1 * strcmp(strtotime($a->d), strtotime($b->d));
+		return -1 * strcmp(strtotime($a["d"]), strtotime($b["d"]));
 	}
 
 	usort($recipeIndex, "recipeDateCompare");
@@ -14,7 +13,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 	<title>Rocket Chilli Cookbook</title>
-	<base href="<?php echo goUp(1) ?>"/>
+	<base href="<?= findBase() ?>"/>
 	<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
 	<?php include("resources.php") ?>
 	<link rel="stylesheet" type="text/css" href="styles/index.css"/>
@@ -35,33 +34,18 @@
 	</div>
 	<div class="container">
 		<div class="tab-holder">
-			<div class="page-tab active" data-page="latest">Latest</div>
+			<div class="page-tab" data-page="latest">Latest</div>
 			<div class="page-tab" data-page="genres">Genres</div>
 			<div class="page-tab" data-page="search">Search</div>
-			<div class="page-tab" data-page="index">A-Z</div>
+			<div class="page-tab" data-page="list">A-Z</div>
 		</div>
 		<div class="page-holder">
-			<div class="page active" id="latest">
-				<h2>Recent additions to the cookbook</h2>
-				<?php
-					for ($i = 0; $i < 5; $i ++)
-						echo "<div class=\"recent-box\" style=\"background-image:url('" . $recipeIndex[$i]->p . "')\">
-							<a href=\"recipes/" . str_replace(".xml", "", $recipeIndex[$i]->f) . "\" class=\"title\">" . $recipeIndex[$i]->t . "</a>
-						</div>";
-				?>
-			</div>
-			<div class="page" id="genres">This isn't ready yet</div>
-			<div class="page" id="search">
-				<div id="search-box">
-					<div class="placeholder">Search for a recipe...</div>
-					<input type="text"/>
-					<div class="search-icon"></div>
-				</div>
-				<p id="search-no-match" class="error">No matching recipes</p>
-				<p id="search-hint">Search for a recipe by its name or description, ingredients, region or style.</p>
-				<div id="search-results"></div>
-			</div>
-			<div class="page" id="index">This isn't ready yet</div>
+		 <?php
+		 	include("pages/latest.php");
+		 	include("pages/genres.php");
+		 	include("pages/search.php");
+		 	include("pages/list.php");
+		 ?>
 		</div>
 	</div>
 </body>

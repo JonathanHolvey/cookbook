@@ -59,7 +59,7 @@
 .recipe-instructions .info {
 	color: #45ADA8;
 }
-.recipe-instructions .info:before {
+.recipe-instructions .info::before {
 	content: "\0000a0";
 }
 .recipe-instructions .step {
@@ -85,16 +85,18 @@
 .recipe-instructions .ingredient:hover {
 	color: #594F4F;
 }
-.recipe-instructions .ingredient.active:after {
+.recipe-instructions .ingredient.active::after {
 	content: "";
-	background-image: url("../images/bubble-pointer.svg");
-	background-size: 2em 1em;
 	position: absolute;
 	bottom: 125%;
 	left: 50%;
-	width: 2em;
-	height: 1em;
+	width: 0;
+	height: 0;
 	margin-left: -1em;
+	border-left: 1em solid transparent;
+	border-right: 1em solid transparent;
+	border-top: 1em solid #EFFED8;
+
 }
 .recipe-instructions .ingredient .bubble {
 	display: none;
@@ -124,17 +126,17 @@
 	font-family: "Museo", sans-serif;
 }
 /* styles for fancy checklists */
-ul.check-list li {
+ul.checklist li {
 	margin-top: 0.5em;
 	cursor: pointer;
 	clear: both;
 	padding-left: 2em;
 	position: relative;
 }
-ul.check-list li:hover, ul.check-list li:hover .info {
+ul.checklist li:hover, ul.checklist li:hover .info {
 	color: #594F4F;
 }
-ul.check-list li:before {
+ul.checklist li::before {
 	content: "";
 	display: block;
 	width: 0.8em;
@@ -145,15 +147,15 @@ ul.check-list li:before {
 	top: 0.1em;
 	left: 0;
 }
-ul.check-list li:hover:before {
+ul.checklist li:hover::before {
 	border-color: #594F4F;
-	background: #9DE0AD;
+	/*background: #9DE0AD;*/
 }
-ul.check-list li.checked, ul.check-list li.checked .info {
+ul.checklist li.checked, ul.checklist li.checked .info {
 	color: #45ADA8;
 	text-decoration: line-through;
 }
-ul.check-list li.checked:before {
+ul.checklist li.checked::before {
 	content: url("../images/tick.svg");
 	width: 1.2em;
 	background: none;
@@ -166,9 +168,9 @@ ul.check-list li.checked:before {
 	position: relative;
 }
 .list-count .counter {
-	width: 1.5em;
+	width: 1.6em;
 	height: 1.6em;
-	padding-left: 0.1em;
+	padding-top: 0.05em;
 	border-radius: 1.4em;
 	font-size: 150%;
 	line-height: 1.6em;
@@ -178,6 +180,7 @@ ul.check-list li.checked:before {
 	text-align: center;
 	color: #EFFED8;
 	background: #594F4F;
+	box-sizing: border-box;
 }
 
 @media all and (min-width: 40em) {
@@ -204,7 +207,7 @@ ul.check-list li.checked:before {
 		left: -0.53em;
 		top: -0.2em;
 		width: 1.6em;
-		padding: 0;
+		padding-top: 0.03em;
 	}
 }
 

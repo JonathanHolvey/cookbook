@@ -11,12 +11,12 @@ Array.prototype.unique = function() {
 // convert strings such as tomato(es) and leaf/leaves to tomatoes and leaves
 String.prototype.pluralise = function() {
 	return this.replace(/(\w+)\((\w*s)\)|(\w+)\/(\w+s)/g, "$1$2$4");
-}
+};
 
+pageRoot = location.href.replace(/\/?(latest|genres|search\/?.*|list|ingredients|method|checklist)/, "").replace(/#.*/, "").replace(/\/$/, "");
+touchDevice = !!("ontouchstart" in window || navigator.msMaxTouchPoints);
 
 $(document).ready(function() {
-	stretchPages();
-
 	// hide ingredient info bubbles when clicking away
 	$("body").click(function(event) {
 		$(".recipe-instructions .bubble, .recipe-instructions .ingredient").removeClass("active");
@@ -41,38 +41,27 @@ $(document).ready(function() {
 
 	// show pages
 	$(".page-tab").click(function () {
-		// hide current page
-		$(".page.active").removeClass("active");
-		// show new page
-		var page = $("#" + $(this).attr("data-page"));
-		page.addClass("active");
-		// focus empty input on page change (mainly for search)
-		if (page.find("input").first().val() == "")
-			page.find("input").first().focus();
-		// replace active tab with current
-		$(".page-tab").removeClass("active");
-		$(this).addClass("active");
-		$(window).scroll();
-		stretchPages();
+		setPage($(this).attr("data-page"));
 	});
+
+	// load correct page tab on load or history
+	parseURL();
+	fixJumpLinks();
+	// run stretchPages() - must have an active page available with position
+	stretchPages();
 
 	// change page on swipe left and right
-	$(".page-holder").on("swipeleft", function(event) {
-		// event.preventDefault();
-		$(".page-tab.active").next().click();
-	});
+	if (touchDevice) {
+		$(".page-holder").on("swipeleft", function(event) {
+			$(".page-tab.active").next().click();
+		});
+		$(".page-holder").on("swiperight", function(event) {
+			$(".page-tab.active").prev().click();
+		});
+	}
 
-	// $(".page-holder").bind("swipeone", function(event, object) {
-	// 	event.preventDefault();
-	// 	var xDirection = object.description.split(":")[2];
-	// 	if (xDirection == "left")
-	// 		$(".page-tab.active").next().click();
-	// 	if (xDirection == "right")
-	// 		$(".page-tab.active").prev().click();
-	// });
-
-	// check and uncheck boxes in ul.check-list elements and update list counter
-	$("ul.check-list li").click(function() {
+	// check and uncheck boxes in ul.checklist elements and update list counter
+	$("ul.checklist li").click(function() {
 		if ($(this).hasClass("checked")) {
 			$(this).removeClass("checked");
 			adjust = 1;
@@ -84,20 +73,21 @@ $(document).ready(function() {
 		// update list counter with number of unchecked items
 		count = $(this).siblings("li").not(".checked").length + adjust;
 		$(this).parent().parent().find(".list-count .counter").html(count);
-		if (count == 1)
+		if (count === 0)
+			$(".list-count h2").html("All done");
+		else if (count == 1)
 			$(".list-count h2").html("item remaining");
 		else
 			$(".list-count h2").html("items remaining");
-	})
+	});
 
 	// add decoration to hr elements
 	$("hr").each(function() {		
 		$(this).append("<div class=\"decoration\"><div class=\"circle\"/><div class=\"circle\"/><div class=\"circle\"/></div>");
-	})
+	});
 
-	// make full recent boxes clickable
-	$(".recent-box").click(function() {
-		location.href = $(this).find("a").attr("href");
+	window.addEventListener("popstate", function(e) {
+		parseURL();
 	});
 });
 $(window).resize(function() {
@@ -106,9 +96,55 @@ $(window).resize(function() {
 
 // force page backgrounds to stretch to the bottom of the page
 function stretchPages() {
-	$(".page").each(function() {
-		height = $(window).height() - $(this).offset().top - parseFloat($(this).css("padding-top")) - parseFloat($(this).css("padding-bottom"));
-		$(this).css("min-height", height);
-	});
+	page = $(".page.active");
+	height = $(window).height() - page.offset().top - parseInt(page.css("padding-top")) - parseInt(page.css("padding-bottom"));
+	$(".page").css("min-height", height);
+}
 
+// load correct page tab from current url
+function parseURL() {
+	if (pageRoot != location.href) {
+		pageInfo = location.href.replace(pageRoot, "").replace(/^\//, "").replace(/#.*/, "");
+		pageName = pageInfo.replace(/\/.*$/, "");
+		showPage(pageName);
+		if (pageName == "search") {
+			searchTerm = pageInfo == pageName ? "" : pageInfo.replace(/^.+\//, "");
+			$("#search-box input").attr("value", searchTerm.replace(/\+/g, " ")).keyup();
+			resetSearch();
+		}
+	}
+	else
+		showPage("");
+}
+
+// change page and add tab navigation to url
+function setPage(pageName) {
+	showPage(pageName);
+	history.replaceState(null, null, pageRoot + "/" + pageName);
+	fixJumpLinks();
+}
+
+function showPage(pageName) {
+	// hide current page
+	$(".page,.page-tab").removeClass("active");
+	// show new page
+	if (pageName !== "")
+		page = $("#" + pageName);
+	else
+		page = $(".page").first();
+	page.addClass("active");
+	// replace active tab with current
+	$(".page-tab[data-page=\"" + $(page).attr("id") + "\"]").addClass("active");
+	// focus empty input on page change (mainly for search)
+	if (page.find("input").first().val() === "")
+		page.find("input").first().focus();
+	$(window).scroll();
+}
+
+// allow in-page links to work with the <base> tag
+// note that links to sections in other pages won't work
+function fixJumpLinks() {
+	$("a[href*='#']").each(function() {
+		$(this).attr("href", $(this).attr("href").replace(/^.*(?=#)/, location.href));
+	});
 }
